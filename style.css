@@ -1,7 +1,7 @@
 /* 全体の背景色（枠の外側） */
 body {
   font-family: sans-serif;
-  background-color: #e6f3ff; /* 枠の外側＋ヘッダー/フッターと同じ色 */
+  background-color: #ebf3fc; /* 枠の外側＋ヘッダー/フッターと同じ色 */
   color: #333;
   margin: 0;
   padding: 0;
@@ -11,8 +11,6 @@ body {
 /* 中央の白い箱＋左右枠線 */
 .container {
   background-color: #fff; /* ← 白背景！ */
-  border-left: 4px solid #4da6ff;
-  border-right: 4px solid #4da6ff;
   max-width: 800px;
   margin: 2em auto;
   padding: 1.5em;
@@ -21,7 +19,7 @@ body {
 
 /* ヘッダーとフッター：bodyと同じ背景色で統一感を出す */
 header, footer {
-  background-color: #e6f3ff;
+  background-color: #ebf3fc;
   color: #003366;
   padding: 1em 0;
 }
