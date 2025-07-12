@@ -1,4 +1,6 @@
 /* style.css */
+
+/* 共通 */
 body {
   font-family: sans-serif;
   line-height: 1.6;
@@ -8,20 +10,23 @@ body {
   color: #333;
 }
 
+/* ヘッダーとフッターにさわやかブルー系 */
 header, footer {
-  background-color: #222;
+  background-color: #4da6ff;  /* ← 爽やかブルー */
   color: white;
   padding: 1em 0;
 }
 
+/* コンテンツ幅制限（中央寄せ） */
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 1em;
 }
 
+/* リンク */
 a {
-  color: #00aaff;
+  color: #007bff;
   text-decoration: none;
 }
 
@@ -29,10 +34,6 @@ a:hover {
   text-decoration: underline;
 }
 
-h1, h2, h3 {
+h1, h2 {
   margin-top: 0;
-}
-
-main {
-  padding: 2em 0;
 }
