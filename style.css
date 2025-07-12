@@ -1,25 +1,29 @@
-/* style.css */
-
-/* 共通 */
+/* 全体の背景色（枠の外側） */
 body {
   font-family: sans-serif;
-  line-height: 1.6;
-  background-color: #f9f9f9;
+  background-color: #e6f3ff; /* 枠の外側＋ヘッダー/フッターと同じ色 */
+  color: #333;
   margin: 0;
   padding: 0;
-  color: #333;
+  line-height: 1.6;
 }
 
-header, footer {
-  background-color: #e6f3ff;  /* ← 薄くて爽やかな水色系 */
-  color: #003366;             /* 文字は濃い青でくっきり */
-}
-
-/* コンテンツ幅制限（中央寄せ） */
+/* 中央の白い箱＋左右枠線 */
 .container {
+  background-color: #fff; /* ← 白背景！ */
+  border-left: 4px solid #4da6ff;
+  border-right: 4px solid #4da6ff;
   max-width: 800px;
-  margin: 0 auto;
-  padding: 0 1em;
+  margin: 2em auto;
+  padding: 1.5em;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+/* ヘッダーとフッター：bodyと同じ背景色で統一感を出す */
+header, footer {
+  background-color: #e6f3ff;
+  color: #003366;
+  padding: 1em 0;
 }
 
 /* リンク */
@@ -34,14 +38,4 @@ a:hover {
 
 h1, h2 {
   margin-top: 0;
-}
-
-.container {
-  border-left: 4px solid #4da6ff;
-  border-right: 4px solid #4da6ff;
-  background-color: #ffffff;
-  padding: 1.5em;
-  margin: 2em auto;
-  max-width: 800px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
