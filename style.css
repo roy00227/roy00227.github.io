@@ -10,11 +10,9 @@ body {
   color: #333;
 }
 
-/* ヘッダーとフッターにさわやかブルー系 */
 header, footer {
-  background-color: #3492f0;  /* ← 爽やかブルー */
-  color: white;
-  padding: 1em 0;
+  background-color: #e6f3ff;  /* ← 薄くて爽やかな水色系 */
+  color: #003366;             /* 文字は濃い青でくっきり */
 }
 
 /* コンテンツ幅制限（中央寄せ） */
