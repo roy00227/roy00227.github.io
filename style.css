@@ -22,6 +22,7 @@ header, footer {
   background-color: #ebf3fc;
   color: #003366;
   padding: 1em 0;
+  text-align: center; /* ← これで中央揃え */
 }
 
 /* リンク */
