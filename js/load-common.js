@@ -8,5 +8,3 @@ function loadCommonParts() {
     .then(res => res.text())
     .then(data => document.getElementById("footer").innerHTML = data);
 }
-
-document.addEventListener("DOMContentLoaded", loadCommonParts);
