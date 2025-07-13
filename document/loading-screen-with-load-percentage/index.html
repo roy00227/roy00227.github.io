@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>roy00227-site</title>
+  <link rel="stylesheet" href="../../style.css">  
+  <script defer src="../../js/load-common.js"></script>
+</head>
+<body onload="loadCommonParts()">
+  <div id="header"></div>
+
+  <main class="container">
+    <h1>Document-LoadingScreenWithLoadPercentage</h1>
+      <a href="https://www.fab.com/ja/listings/179be80a-b024-4442-ae08-c0ddf90d3ac3" target="_blank" rel="noopener noreferrer">
+        Fab
+      </a><br>
+      This is a plugin that converts UMG into a slate widget, displays a loading screen, and displays the loading percentage with a progress bar and text.<br><br>
+
+    <div class="image-container">        
+      <iframe class="media" width="400" height="225"
+        src="https://www.youtube.com/embed/PbietvmW3VI"
+        title="Unreal Engine Plugin Demo"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>      
+      <div class="text">
+        Demo Video<br>
+      </div>
+    </div>
+    <br>
+
+    <div class="image-container">        
+      <iframe width="402" height="273" src="https://www.youtube.com/embed/jiK6FFqifMg" title="Unreal Engine Plugin_How to use  &quot;Loading Screen With Load Percentage&quot;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+      <div class="text">
+        This is a video on how to use it.
+      </div>
+    </div>
+    <br>
+
+    <!-- 目次 -->
+    <nav id="toc">
+      <h2>Table of Contents</h2>
+      <ul id="toc-list"></ul>
+    </nav>
+    <!-- 目次の項目を自動で追加するスクリプト -->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const tocList = document.getElementById("toc-list");
+      const headings = document.querySelectorAll("h2, h3");
+      headings.forEach((heading, index) => {
+        // 目次セクション内の見出しは除外
+        if (heading.closest("#toc")) return;
+
+        if (!heading.id) {
+          heading.id = `heading-${index}`;
+        }
+        const li = document.createElement("li");
+        li.style.marginLeft = heading.tagName === "H3" ? "20px" : "0";
+        li.innerHTML = `<a href="#${heading.id}">${heading.textContent}</a>`;
+        tocList.appendChild(li);
+      });
+    });
+    </script>
+    
+    <h2>1.Activate the plugin</h2>    
+      <div class="image-container">
+        <img src="image/1Activate the plugin1.png" alt="Activate the plugin1">
+        <div class="text">
+          The plugin should probably be enabled by default, but if you can't use it, see below.<br>
+          First, activate the plugin.
+        </div>
+      </div>
+
+      <div class="image-container">
+        <img src="image/1Activate the plugin2.png" alt="Activate the plugin2">
+        <div class="text">
+          Check the plugin and restart the editor.
+        </div>
+      </div>
+      
+    <h2>2.Configure UMG</h2>
+
+      <div class="image-container">
+        <img src="image/2Configure UMG1.png" alt="Configure UMG1">
+        <div class="text">
+          Open the Plugin/LoadingScreenWithLoadPercentage Content folder.
+        </div>
+      </div>
+
+      <div class="image-container">
+        <img src="image/2Configure UMG2.png" alt="Configure UMG2">
+        <div class="text">
+          If you can't see the plugin folder, check Show Plugin Content.
+        </div>
+      </div>
+    
+      <div class="image-container">
+        <img src="image/2Configure UMG3.png" alt="Configure UMG3">
+        <div class="text">
+          If you don't have your own UMG loading screen, duplicate BP_LoadingScreenUserWidget and move it to your content folder.
+        </div>
+      </div>
+
+      <div class="image-container">
+        <img src="image/2Configure UMG4.png" alt="Configure UMG4">
+        <div class="text">
+          If you want to use your own UMG loading screen, change ParentClass in ClassSettings to LoadingScreenUserWidget.
+        </div>
+      </div>
+
+      <div class="image-container">
+        <img src="image/2Configure UMG5.png" alt="Configure UMG5">
+        <div class="text">
+          If you want to display loading progress in a bar, it must be a <span class="strong">ProgressBar</span>.
+        </div>
+      </div>
+
+      <div class="image-container">
+        <img src="image/2Configure UMG6.png" alt="Configure UMG6">
+        <div class="text">
+          If you want to display the loading progress as text, it must be <span class="strong">Text</span>.
+          <br>
+          Also, the Text of Content must be half-width or full-width <span class="strong">%</span>.
+        </div>
+      </div>
+    
+
+    
+
+  </main>
+
+  <div id="footer"></div>
+</body>
+</html>

@@ -11,7 +11,7 @@ body {
 /* 中央の白い箱＋左右枠線 */
 .container {
   background-color: #fff; /* ← 白背景！ */
-  max-width: 800px;
+  max-width: 1200px;
   margin: 2em auto;
   padding: 1.5em;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
@@ -99,12 +99,37 @@ h1, h2 {
   margin-top: 1em;
 }
 
-.image-container iframe {
-  width: 400px;
-  height: 225px;
+.image-container iframe,
+.image-container img {
+  max-width: 600px;    /* 横幅の最大値を制限 */
   flex-shrink: 0;
+  display: block;
 }
 
 .image-container .text {
   flex: 1;
+}
+
+#toc {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+#toc ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#toc li {
+  margin: 0.3em 0;
+}
+
+.strong {
+  font-weight: bold;
+  color: #d43f00; /* 赤系で視線を引く */
+  background-color: #fff3cd; /* 薄い黄色背景で目立たせる */
+  padding: 0 4px;
+  border-radius: 3px;
 }
