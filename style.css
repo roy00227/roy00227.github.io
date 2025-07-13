@@ -38,3 +38,30 @@ a:hover {
 h1, h2 {
   margin-top: 0;
 }
+
+.product {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5em;
+}
+
+.product img {
+  width: 120px;
+  height: auto;
+  margin-right: 1em;
+}
+
+.product-info {
+  max-width: 600px;
+}
+
+.product-info a {
+  font-weight: bold;
+  font-size: 1.1em;
+  text-decoration: none;
+  color: #007acc;
+}
+
+.product-info a:hover {
+  text-decoration: underline;
+}
