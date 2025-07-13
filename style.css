@@ -65,3 +65,27 @@ h1, h2 {
 .product-info a:hover {
   text-decoration: underline;
 }
+
+.product-info h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.product-links {
+  list-style: none;
+  padding: 0;
+  margin: 0.5em 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.product-links li a {
+  text-decoration: none;
+  color: #007acc;
+  font-weight: 500;
+}
+
+.product-links li a:hover {
+  text-decoration: underline;
+}
