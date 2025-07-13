@@ -27,7 +27,7 @@ header, footer {
 
 /* リンク */
 a {
-  color: #007bff;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -88,4 +88,23 @@ h1, h2 {
 
 .product-links li a:hover {
   text-decoration: underline;
+}
+
+
+/* 画像や動画の右にテキストを表示するためのコンテナ */
+.image-container {
+  display: flex;
+  align-items: flex-start; /* or center */
+  gap: 20px;
+  margin-top: 1em;
+}
+
+.image-container iframe {
+  width: 400px;
+  height: 225px;
+  flex-shrink: 0;
+}
+
+.image-container .text {
+  flex: 1;
 }
