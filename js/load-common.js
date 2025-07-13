@@ -1,4 +1,7 @@
-// js/load-common.js
+document.addEventListener("DOMContentLoaded", () => {
+  loadCommonParts();
+});
+
 function loadCommonParts() {
   fetch("/header.html")
     .then(res => res.text())
@@ -8,7 +11,3 @@ function loadCommonParts() {
     .then(res => res.text())
     .then(data => document.getElementById("footer").innerHTML = data);
 }
-
-<script>
-  document.addEventListener("DOMContentLoaded", loadCommonParts);
-</script>

@@ -3,11 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>roy00227-site</title>
-  <!-- 正しい例：document配下のページからルートのファイルを参照する -->
   <link rel="stylesheet" href="/style.css">
   <script defer src="/js/load-common.js"></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (typeof loadCommonParts === "function") {
+        loadCommonParts();
+      }
+    });
+  </script>
 </head>
-<body onload="loadCommonParts()">
+<body>
   <div id="header"></div>
 
   <main class="container">
