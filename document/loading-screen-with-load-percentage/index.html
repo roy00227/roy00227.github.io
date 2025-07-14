@@ -290,7 +290,7 @@
         <h3>5-1.Pseudo pause</h3>
         
           <div class="image-container">
-            <img src="image/5note1.png" alt="5note1">
+            <img src="image/5-1note1.png" alt="5-1note1">
             <div class="text">
               This plugin will not work if you pause the game with <b>SetGamePaused</b>.<br>
               <br>
@@ -301,7 +301,7 @@
           </div>
           
           <div class="image-container">
-            <img src="image/5note2.png" alt="5note2">
+            <img src="image/5-1note2.png" alt="5-1note2">
             <div class="text">
               Note that the value of <b>SetGlobalTimeDilation</b> is clamped to the Min Global Time Dilation found in the World Setting.<br>
               The above example is for Min Global Time Dilation's default value of 0.0001.
@@ -309,7 +309,7 @@
           </div>
 
           <div class="image-container">
-            <img src="image/5note3.png" alt="5note3">
+            <img src="image/5-1note3.png" alt="5-1note3">
             <div class="text">
               Unlike poses, input actions are effective. If you have a problem, please limit it using <b>DisableInput</b> or a Bool variable such as IsLoading.<br>
               Also, since it doesn't completely stop the game, you may want to limit damage processing with something like <b>CanBeDamaged</b>.
@@ -317,11 +317,127 @@
           </div>
           
         <h3>5-2.Be careful how you back up</h3>
+          <div class="image-container">
+            <img src="image/5-2note.png" alt="5-2note">
+            <div class="text">
+              If you set the parent class to LoadingScreenUserWidget, you will not be able to open BP unless this plugin is enabled.<br>
+              Once you have edited your loading screen, we recommend that you take a <span class="strong">backup</span> by duplicating it and changing the <span class="strong">parent class to UserWidget</span>.
+            </div>
+          </div>
+
+        <h3>5-3.Asset Localization</h3>   
+
+          <div class="image-container">
+            <img src="image/5-3note1.png" alt="5-3note1.png">
+            <div class="text">
+              This plugin does not work properly with asset localization.<br>
+              This is an example of a countermeasure.<br>
+              Get the current culture and use the switch node to create different widgets for each language.<br>
+              The variable to be set must be <span style="color: #3498db;">“LoadingScreenUserWidget”.</span><br>
+              <br>*Localization dashboard works fine.
+
+            </div>
+          </div>
+          
+          <div class="image-container">
+            <img src="image/5-3note2.png" alt="5-3note2.png">
+            <div class="text">
+              <b>postscript:</b><br>
+              When using this plugin's functions on UMG, I found that there were problems with asset localization other than loading screens.<br>
+              If you have a problem, move it to a custom event such as character or game mode and call it on UMG.<br>
+              <br>
+              <span class="strong">It is important to use this plugin's functions outside of UMG.</span>
+
+            </div>
+          </div>
 
 
-      
+          <br>
+          <h2>6.Update_2023/11/04_ver1.11_SectorsLoadingEffect</h2>
+          
+            <div class="image-container">        
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/sF1q1pKGBtg?si=ELj8NA_O2W_dji9O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <div class="text">
+                Add M_SectorsLoadingEffect.
+              </div>
+            </div>
+
+            <div class="image-container">
+              <img src="image/6update.png" alt="6update.png">
+              <div class="text">
+                You can change the settings in <b>M_SectorsLoadingEffect_Inst</b> in the plugin's material folder.
+
+            </div>
+          </div>
+
+          <br>
+          <h2>7.Update_2024/02/25_ver1.2</h2>
+
+          <h3>7-1.Circle Progress Bar</h3>
+
+            <div class="image-container">        
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/MXgFBUpDyVY?si=jyWm8dS8G5nmfPWx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <div class="text">
+                Now get percentages from BP, Now use Circle Progress Bar. <br>
+                I have a simple Circle Progress Bar material in my materials folder.
+              </div>
+            </div>
+
+            <div class="image-container">        
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/JznS53JU6rA?si=9nfmb2eb1ZstYV6g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <div class="text">
+              Added on 2024/02/26<br>
+              I created a material instance of Circle Progress Bar.
+              </div>
+            </div>
+
+            <div class="image-container">
+              <img src="image/7-1update1.png" alt="7-1update1.png">
+              <div class="text">
+                This is the loading screen BP.<br><br>
+                <b>EventOnPercentageUpdate:</b> Event called every time a percentage is updated.<br>
+                <b>GetLoadPercentaeg:</b> Pure function to get load percentage.<br><br>
+                <span class="strong">*Note that you must use the BeginAsyncLoadWithPercentageUpdate function!</span>
+            </div>
+          </div>
+
+          <h3>7-2.Fade in and fade out functions</h3>
+
+            <div class="image-container">
+              <img src="image/7-2update1.png" alt="7-1update1.png">
+              <div class="text">
+              <span style="color: #c40303;">Enable Fade In / Fade Out:</span> Set to true to enable each effect.<br>
+              <span style="color: #60ee44;">In Fade In / Out Timer Interval:</span> Execution interval for each fade step.<br>
+              <span style="color: #60ee44;">In Fade In / Out Speed:</span> Speed of opacity change per step. Higher values = faster transitions.<br>
+
+                <br>
+                <span class="strong">
+                Note that the two Timer Intervals are affected by Global Time Dilation.
+                
+                <br><br>Use the function before starting the load.</span>
+
+              </div>
+            </div>
+          
+
+          <br>
+          <h2>8.Update_2024/03/07_ver1.22_Background Material</h2>
+            <div class="image-container">        
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/wc6JTE1AP_0?si=jTz-ozALFMHdnZcX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <div class="text">
+                Add Background Material.<br>
+                The following sites are recommended for textures used for effects.<br>
+                <a href="https://mebiusbox.github.io/contents/EffectTextureMaker/" target="_blank" rel="noopener noreferrer">
+                  EffectTextureMaker
+                </a>                
+              </div>
+            </div>
 
 
+
+
+
+          
 
   </main>
 
