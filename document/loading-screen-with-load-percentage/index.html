@@ -163,16 +163,17 @@
       <div class="image-container">
         <img src="image/3Show-loading-screen4.png" alt="3Show-loading-screen4">
         <div class="text">
-          Next, drag the <span style="color: #3498db;">Return Value</span> of CreateWidgetReturn Value of CreateWidget and use the <span class="strong">BeginAsyncLoadWithPercentageUpdate</span> function.
+          Next, drag the <span style="color: #3498db;">Return Value</span> of CreateWidgetReturn Value of CreateWidget and use the <span class="strong">BeginAsyncLoadWithPercentageUpdate</span> function.<br><br>
+          
+         <span style="color: #ff009d;">In Object Path</span>:<br>
+          You need the object path of the level you want to open to open the level and get loading progress. It's a little confusing, so I'll write about it below.
+          
         </div>
       </div>
 
       <div class="image-container">
         <img src="image/3Show-loading-screen5.png" alt="3Show-loading-screen5">
         <div class="text">
-         <span style="color: #ff009d;">In Object Path</span>:<br>
-          You need the object path of the level you want to open to open the level and get loading progress. It's a little confusing, so I'll write about it below.
-          <br><br>
           <span style="color: #60ee44;">In Timer Interval</span>:<br>
           Time interval to update percentages.
           <br><br>
@@ -220,6 +221,67 @@
         <img src="image/3Show-loading-screen8.png" alt="3Show-loading-screen8">
         <div class="text">
           The output log can be displayed from the Window at the top left.
+        </div>
+      </div>
+
+      <br>
+      <h2>4.Supplement</h2>
+
+      <div class="image-container">
+        <img src="image/4Supplement1.png" alt="4Supplement1">
+        <div class="text">
+          Loading screen editing must be done before SetupLoadingScreen.
+        </div>
+      </div>
+
+      <div class="image-container">
+        <img src="image/4Supplement2.png" alt="4Supplement2">
+        <div class="text">
+          recommend using <b>custom events</b> and <b>interfaces</b> to make it easier to use.
+          If you want to change it, you can just change that part.
+        </div>
+      </div>
+
+      <div class="image-container">
+        <img src="image/4Supplement3.png" alt="4Supplement3">
+        <div class="text">
+          In this example, we decided to put the map in a common folder and created an <span style="color: #ff009d;">ObjectPath</span> using <b>Append</b>.</span>
+          <br><br>
+          A: <span style="color: #ff009d;">MapFolderPath</span><br>
+          B&D: <span style="color: #ff009d;">LevelName</span><br>
+          C: .（dot） <br>
+          <br>
+          This makes it easier to use because you only need to enter the <span style="color: #ff009d;">LevelName</span>.
+          
+        </div>
+      </div>
+
+      <div class="image-container">
+        <img src="image/4Supplement4.png" alt="4Supplement4">
+        <div class="text">
+          We also recommend creating a Bool variable like <span style="color: #c40303;">IsLoading</span> to limit the display of loading screens.<br>
+          If you set the default value to false, it will automatically become false after the level transition, which is convenient.
+          
+        </div>
+      </div>
+        
+      <div class="image-container">
+        <img src="image/4Supplement5.png" alt="4Supplement5">
+        <div class="text">
+          For the loading screen widget, we recommend using <b>Scale Box</b>, Stretch to <b>Scale to Fit</b>, and Stretch Direction to <b>Both</b>. (If you do not do this, the display may change during Open Level)
+          
+        </div>
+      </div>   
+
+      <div class="image-container">
+        <img src="image/4Supplement6.png" alt="4Supplement6">
+        <div class="text">
+          Added on 2024/02/25.<br>
+          It is easier to adjust if SizeBox is a child of ScaleBox.<br>
+          Set WidthOverride and HeightOverride to the size you expect.<br><br>
+          Added on 2024/10/15<br>
+          *There was information that using ScaleBox and SizeBox at the same time increases the speed. It may be better not to use SizeBox.
+          
         </div>
       </div>
       
