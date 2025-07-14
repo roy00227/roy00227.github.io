@@ -107,10 +107,15 @@ h1, h2 {
   margin-top: 1em;
 }
 
-.image-container iframe,
-.image-container img {
+.image-container iframe{
   max-width: 600px;    /* 横幅の最大値を制限 */
-  //height: auto;
+  flex-shrink: 0;
+  display: block;
+}
+
+.image-container img {  
+  max-width: 600px;    /* 横幅の最大値を制限 */
+  height: auto;
   flex-shrink: 0;
   display: block;
 }
