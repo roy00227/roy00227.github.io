@@ -82,6 +82,7 @@
           Check the plugin and restart the editor.
         </div>
       </div>
+      <br>
       
     <h2>2.Configure UMG</h2>
 
@@ -128,9 +129,102 @@
           Also, the Text of Content must be half-width or full-width <span class="strong">%</span>.
         </div>
       </div>
+      <br>
     
 
-    
+      <h2>3.Show loading screen</h2>
+
+      <div class="image-container">
+        <img src="image/3Show-loading-screen1.png" alt="3Show-loading-screen1">
+        <div class="text">
+          Here we will use a loading screen with the default character as an example.
+        </div>
+      </div>
+
+      <div class="image-container">
+        <img src="image/3Show-loading-screen2.png" alt="3Show-loading-screen2">
+        <div class="text">
+          First, select the loading screen you want to use with Create Widget.
+        </div>
+      </div>  
+      
+      <div class="image-container">
+        <img src="image/3Show-loading-screen3.png" alt="3Show-loading-screen3">
+        <div class="text">
+          Next, drag the <span style="color: #3498db;">Return Value</span> of CreateWidget and use the <span class="strong">SetupLoadingScreen</span> function.
+          <br>
+          CreateWidget's <span style="color: #3498db;">Return Value</span> needs to be connected not only to the <span style="color: #3498db;">Target</span> but also to the <span style="color: #3498db;">Loading Widget</span>.
+          <br><br>
+          <span style="color: #60ee44;">Minimum Display Time</span>:<br>
+          specifies the minimum number of seconds of loading screen you want to display.
+        </div>
+      </div>
+      
+      <div class="image-container">
+        <img src="image/3Show-loading-screen4.png" alt="3Show-loading-screen4">
+        <div class="text">
+          Next, drag the <span style="color: #3498db;">Return Value</span> of CreateWidgetReturn Value of CreateWidget and use the <span class="strong">BeginAsyncLoadWithPercentageUpdate</span> function.
+        </div>
+      </div>
+
+      <div class="image-container">
+        <img src="image/3Show-loading-screen5.png" alt="3Show-loading-screen5">
+        <div class="text">
+         <span style="color: #ff009d;">In Object Path</span>:<br>
+          You need the object path of the level you want to open to open the level and get loading progress. It's a little confusing, so I'll write about it below.
+          <br><br>
+          <span style="color: #60ee44;">In Timer Interval</span>:<br>
+          Time interval to update percentages.
+          <br><br>
+          <span style="color: #ff0000;">Use FInterp to Movement</span>:<br>
+          Smoothly move the progress bar and text that indicate loading progress. If you remove this check, accurate display will occur, but the values ​​will change rapidly.
+          <br><br>
+          <span style="color: #60ee44;">In Interp Speed</span>:<br>
+          The value used for FInterp to. The higher the value, the faster the loading progress will be.
+          <br><br>
+          <span style="color: #60ee44;">Min Change Amount with Target Limit</span>:<br>
+          FIntterp to moves much slower when approaching 100%, so set it to the lowest value.<br>
+
+        </div>
+      </div>
+      <div class="image-container">
+        <img src="image/3Show-loading-screen6.png" alt="3Show-loading-screen6">
+        <div class="text">
+        About In <span style="color: #ff009d;">Object Path</span>.<br>
+        In my case the reference is<br>
+        <b>/Script/Engine.World'/Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap'</b><br>
+        Delete this first and last symbol.<br>
+        <span class="strong">/Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap</span><br>   
+        <br>   
+        Be careful not to make a mistake.<br>
+        ・Add <span class="strong">/</span> in front of Game<br>
+        ・Delete the last <span class="strong">'</span><br>   
+
+        </div>
+      </div>
+      <div class="image-container">
+        <img src="image/3Show-loading-screen7.png" alt="3Show-loading-screen7">
+        <div class="text">
+          If you play in the viewport or editor window, you can see the percentage movement in the output log.<br>
+          Searching for Logtemp is invalid.<br>
+          <br>
+          <b>TargetPercentage</b>: Actual progress.Target of FInterpTo.<br>
+          <b>CurrentPercentage</b>: Percentage of progress bar or text.<br>
+          <b>ElapsedTime</b>: Elapsed time since loading started.<br>
+          <br>
+          Adjust it to your liking.<br>
+        </div>
+      </div>
+      
+      <div class="image-container">
+        <img src="image/3Show-loading-screen8.png" alt="3Show-loading-screen8">
+        <div class="text">
+          The output log can be displayed from the Window at the top left.
+        </div>
+      </div>
+      
+
+
 
   </main>
 
