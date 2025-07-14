@@ -280,10 +280,45 @@
           It is easier to adjust if SizeBox is a child of ScaleBox.<br>
           Set WidthOverride and HeightOverride to the size you expect.<br><br>
           Added on 2024/10/15<br>
-          *There was information that using ScaleBox and SizeBox at the same time increases the speed. It may be better not to use SizeBox.
-          
+          *There was information that using ScaleBox and SizeBox at the same time increases the speed. It may be better not to use SizeBox.          
         </div>
       </div>
+    
+      <br>
+      <h2>5.Note</h2>
+
+        <h3>5-1.Pseudo pause</h3>
+        
+          <div class="image-container">
+            <img src="image/5note1.png" alt="5note1">
+            <div class="text">
+              This plugin will not work if you pause the game with <b>SetGamePaused</b>.<br>
+              <br>
+              You can pseudo-pause it by using <b>SetGlobalTimeDilation</b> (example: 0.0001).<br>
+              I think it would be a good idea to set <span style="color: #60ee44;">InTimerInteraval</span> to a value that is one-tenth of GlobalTimeDilation (example: 0.00001).<br>
+              In this example, <span style="color: #60ee44;">InInterpSpeed</span> ​​of 10000.0 seems good.
+            </div>
+          </div>
+          
+          <div class="image-container">
+            <img src="image/5note2.png" alt="5note2">
+            <div class="text">
+              Note that the value of <b>SetGlobalTimeDilation</b> is clamped to the Min Global Time Dilation found in the World Setting.<br>
+              The above example is for Min Global Time Dilation's default value of 0.0001.
+            </div>
+          </div>
+
+          <div class="image-container">
+            <img src="image/5note3.png" alt="5note3">
+            <div class="text">
+              Unlike poses, input actions are effective. If you have a problem, please limit it using <b>DisableInput</b> or a Bool variable such as IsLoading.<br>
+              Also, since it doesn't completely stop the game, you may want to limit damage processing with something like <b>CanBeDamaged</b>.
+            </div>
+          </div>
+          
+        <h3>5-2.Be careful how you back up</h3>
+
+
       
 
 
