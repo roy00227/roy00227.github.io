@@ -158,11 +158,11 @@ h1, h2 {
   使用例
   Set the value of <span class="color-int">Count</span> to <span class="color-int">10</span>. 
 */
-.color-bool       { color: #900000; } 
+.color-bool       { color: #910000; } 
 .color-Byte       { color: #016E64; } 
 .color-int        { color: #23DEAA; } 
 .color-int64      { color: #AAE2AD; } 
-.color-float      { color: #9EFE44; } 
+.color-float      { color: #9DFC44; } 
 .color-name       { color: #C980FA; } 
 .color-string     { color: #FD00D1; }
 .color-text       { color: #E479A6; }
