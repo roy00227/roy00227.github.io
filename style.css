@@ -153,21 +153,21 @@ h1, h2 {
 }
 
 
-/* UE変数の色 */
-/* スポイトで取得済み */
-
-.color-float  { color: #37D100; } 
-.color-bool   { color: #920101; } 
-.color-string { color: #FD00D2; }
-.color-object { color: #00A5EE; } 
-
-/* スポイトで未取得 */
-.color-int    { color: #60ee44; } 
-.color-text   { color: #9b59b6; }
-.color-name   { color: #34495e; } 
-.color-array  { color: #f1c40f; } 
-.color-struct { color: #16a085; } 
-.color-enum   { color: #95a5a6; } 
-/* 使用例
+/* UE変数の色
+  スポイトで取得
+  使用例
   Set the value of <span class="color-int">Count</span> to <span class="color-int">10</span>. 
 */
+.color-bool       { color: #900000; } 
+.color-Byte       { color: #016E64; } 
+.color-int        { color: #23DEAA; } 
+.color-int64      { color: #AAE2AD; } 
+.color-float      { color: #9EFE44; } 
+.color-name       { color: #C980FA; } 
+.color-string     { color: #FD00D1; }
+.color-text       { color: #E479A6; }
+.color-vector     { color: #FBC626; } 
+.color-rotator    { color: #9CAFFA; } 
+.color-transform  { color: #FE7100; } 
+.color-object     { color: #01A4EE; } 
+
