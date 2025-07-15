@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>roy00227-site</title>
-  <link rel="stylesheet" href="/style.css">
-  <script defer src="/js/load-common.js"></script>
+  <link rel="stylesheet" href="../../style.css">
+  <script defer src="../../js/load-common.js"></script>
   <script defer>
     document.addEventListener("DOMContentLoaded", () => {
       if (typeof loadCommonParts === "function") {
@@ -151,12 +151,15 @@
       <div class="image-container">
         <img src="image/3Show-loading-screen3.png" alt="3Show-loading-screen3">
         <div class="text">
-          Next, drag the <span style="color: #3498db;">Return Value</span> of CreateWidget and use the <span class="strong">SetupLoadingScreen</span> function.
-          <br>
-          CreateWidget's <span style="color: #3498db;">Return Value</span> needs to be connected not only to the <span style="color: #3498db;">Target</span> but also to the <span style="color: #3498db;">Loading Widget</span>.
-          <br><br>
-          <span style="color: #60ee44;">Minimum Display Time</span>:<br>
-          specifies the minimum number of seconds of loading screen you want to display.
+          <div>
+            Next, drag the <span style="color: #3498db;">Return Value</span> of CreateWidget and use the <span class="strong">SetupLoadingScreen</span> function.
+          </div>
+          <div>
+            CreateWidget's <span style="color: #3498db;">Return Value</span> needs to be connected not only to the <span style="color: #3498db;">Target</span> but also to the <span style="color: #3498db;">Loading Widget</span>.
+          </div>
+
+          <p><span style="color: #60ee44;">Minimum Display Time:</span>
+          specifies the minimum number of seconds of loading screen you want to display.</p>
         </div>
       </div>
       
@@ -165,7 +168,7 @@
         <div class="text">
           Next, drag the <span style="color: #3498db;">Return Value</span> of CreateWidgetReturn Value of CreateWidget and use the <span class="strong">BeginAsyncLoadWithPercentageUpdate</span> function.<br><br>
           
-         <span style="color: #ff009d;">In Object Path</span>:<br>
+         <span style="color: #ff009d;">In Object Path:</span>
           You need the object path of the level you want to open to open the level and get loading progress. It's a little confusing, so I'll write about it below.
           
         </div>
@@ -174,17 +177,18 @@
       <div class="image-container">
         <img src="image/3Show-loading-screen5.png" alt="3Show-loading-screen5">
         <div class="text">
-          <span style="color: #60ee44;">In Timer Interval</span>:<br>
+          <p><span style="color: #60ee44;">In Timer Interval:</span>
           Time interval to update percentages.
-          <br><br>
-          <span style="color: #ff0000;">Use FInterp to Movement</span>:<br>
-          Smoothly move the progress bar and text that indicate loading progress. If you remove this check, accurate display will occur, but the values ​​will change rapidly.
-          <br><br>
-          <span style="color: #60ee44;">In Interp Speed</span>:<br>
-          The value used for FInterp to. The higher the value, the faster the loading progress will be.
-          <br><br>
-          <span style="color: #60ee44;">Min Change Amount with Target Limit</span>:<br>
-          FIntterp to moves much slower when approaching 100%, so set it to the lowest value.<br>
+          </p>
+        
+          <p><span style="color: #ff0000;">Use FInterp to Movement:</span>
+          Smoothly move the progress bar and text that indicate loading progress. If you remove this check, accurate display will occur, but the values ​​will change rapidly.</p>
+          <p>
+          <span style="color: #60ee44;">In Interp Speed:</span>
+          The value used for FInterp to. The higher the value, the faster the loading progress will be.</p>
+          <p>
+          <span style="color: #60ee44;">Min Change Amount with Target Limit:</span>
+          FIntterp to moves much slower when approaching 100%, so set it to the lowest value.</p>
 
         </div>
       </div>
@@ -195,24 +199,24 @@
         In my case the reference is<br>
         <b>/Script/Engine.World'/Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap'</b><br>
         Delete this first and last symbol.<br>
-        <span class="strong">/Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap</span><br>   
-        <br>   
-        Be careful not to make a mistake.<br>
-        ・Add <span class="strong">/</span> in front of Game<br>
-        ・Delete the last <span class="strong">'</span><br>   
-
-        </div>
+        <p><span class="strong">/Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap</span></p>   
+        
+        <div>Be careful not to make a mistake.</div>
+        <div>・Add <span class="strong">/</span>(a slash) in front of Game<br></div>
+        <div>・Delete the last <span class="strong">'</span>(single quote character)</div>
+        
+      </div>
       </div>
       <div class="image-container">
         <img src="image/3Show-loading-screen7.png" alt="3Show-loading-screen7">
         <div class="text">
           If you play in the viewport or editor window, you can see the percentage movement in the output log.<br>
           Searching for Logtemp is invalid.<br>
-          <br>
-          <b>TargetPercentage</b>: Actual progress.Target of FInterpTo.<br>
-          <b>CurrentPercentage</b>: Percentage of progress bar or text.<br>
-          <b>ElapsedTime</b>: Elapsed time since loading started.<br>
-          <br>
+          <p>
+          <div><b>TargetPercentage:</b> Actual progress.Target of FInterpTo.</div>
+          <div><b>CurrentPercentage:</b> Percentage of progress bar or text.</div>
+          <div><b>ElapsedTime:</b> Elapsed time since loading started.</div>
+          </p>
           Adjust it to your liking.<br>
         </div>
       </div>
@@ -247,9 +251,9 @@
         <div class="text">
           In this example, we decided to put the map in a common folder and created an <span style="color: #ff009d;">ObjectPath</span> using <b>Append</b>.</span>
           <br><br>
-          A: <span style="color: #ff009d;">MapFolderPath</span><br>
-          B&D: <span style="color: #ff009d;">LevelName</span><br>
-          C: .（dot） <br>
+          <div>A: <span style="color: #ff009d;">MapFolderPath</span></div>
+          <div>B&D: <span style="color: #ff009d;">LevelName</span></div>
+          <div>C: .（dot） </div>
           <br>
           This makes it easier to use because you only need to enter the <span style="color: #ff009d;">LevelName</span>.
           
@@ -276,11 +280,14 @@
       <div class="image-container">
         <img src="image/4Supplement6.png" alt="4Supplement6">
         <div class="text">
-          Added on 2024/02/25.<br>
-          It is easier to adjust if SizeBox is a child of ScaleBox.<br>
-          Set WidthOverride and HeightOverride to the size you expect.<br><br>
-          Added on 2024/10/15<br>
-          *There was information that using ScaleBox and SizeBox at the same time increases the speed. It may be better not to use SizeBox.          
+          <p><div>Added on 2024/02/25.</div>
+            <div>It is easier to adjust if SizeBox is a child of ScaleBox.</div>
+            Set WidthOverride and HeightOverride to the size you expect.
+          </p>
+          <p>
+            <div>Added on 2024/10/15</div>
+            *There was information that using ScaleBox and SizeBox at the same time increases the speed. It may be better not to use SizeBox.    
+          </p>      
         </div>
       </div>
     
@@ -292,11 +299,11 @@
           <div class="image-container">
             <img src="image/5-1note1.png" alt="5-1note1">
             <div class="text">
-              This plugin will not work if you pause the game with <b>SetGamePaused</b>.<br>
-              <br>
-              You can pseudo-pause it by using <b>SetGlobalTimeDilation</b> (example: 0.0001).<br>
-              I think it would be a good idea to set <span style="color: #60ee44;">InTimerInteraval</span> to a value that is one-tenth of GlobalTimeDilation (example: 0.00001).<br>
-              In this example, <span style="color: #60ee44;">InInterpSpeed</span> ​​of 10000.0 seems good.
+              <div>This plugin will not work if you pause the game with <b>SetGamePaused</b>.</div>
+              
+              <div>You can pseudo-pause it by using <b>SetGlobalTimeDilation</b> (example: 0.0001).</div>
+              <div>I think it would be a good idea to set <span style="color: #60ee44;">InTimerInteraval</span> to a value that is one-tenth of GlobalTimeDilation (example: 0.00001).</div>
+              <div>In this example, <span style="color: #60ee44;">InInterpSpeed</span> ​​of 10000.0 seems good.</div>
             </div>
           </div>
           
@@ -320,8 +327,10 @@
           <div class="image-container">
             <img src="image/5-2note.png" alt="5-2note">
             <div class="text">
-              If you set the parent class to LoadingScreenUserWidget, you will not be able to open BP unless this plugin is enabled.<br>
-              Once you have edited your loading screen, we recommend that you take a <span class="strong">backup</span> by duplicating it and changing the <span class="strong">parent class to UserWidget</span>.
+              <p>
+                <div>If you set the parent class to LoadingScreenUserWidget, you will not be able to open BP unless this plugin is enabled.</div>
+                <div> <span class="strong">Once you have edited your loading screen, we recommend that you take a backup by duplicating it and changing theparent class to UserWidget</span>.</div>
+              </p>
             </div>
           </div>
 
@@ -342,10 +351,11 @@
           <div class="image-container">
             <img src="image/5-3note2.png" alt="5-3note2.png">
             <div class="text">
-              <b>postscript:</b><br>
-              When using this plugin's functions on UMG, I found that there were problems with asset localization other than loading screens.<br>
-              If you have a problem, move it to a custom event such as character or game mode and call it on UMG.<br>
-              <br>
+              <p>
+                <div><b>postscript:</b></div>
+                <div>When using this plugin's functions on UMG, I found that there were problems with asset localization other than loading screens.</div>
+              If you have a problem, move it to a custom event such as character or game mode and call it on UMG.
+              </p>
               <span class="strong">It is important to use this plugin's functions outside of UMG.</span>
 
             </div>
@@ -394,9 +404,11 @@
             <div class="image-container">
               <img src="image/7-1update1.png" alt="7-1update1.png">
               <div class="text">
-                This is the loading screen BP.<br><br>
-                <b>EventOnPercentageUpdate:</b> Event called every time a percentage is updated.<br>
-                <b>GetLoadPercentaeg:</b> Pure function to get load percentage.<br><br>
+                <p>This is the loading screen BP.</p>
+                <p>
+                  <div><b>EventOnPercentageUpdate:</b> Event called every time a percentage is updated.</div>
+                  <div><b>GetLoadPercentaeg:</b> Pure function to get load percentage.</div>
+                </p>
                 <span class="strong">*Note that you must use the BeginAsyncLoadWithPercentageUpdate function!</span>
             </div>
           </div>
@@ -406,9 +418,11 @@
             <div class="image-container">
               <img src="image/7-2update1.png" alt="7-1update1.png">
               <div class="text">
-              <span style="color: #c40303;">Enable Fade In / Fade Out:</span> Set to true to enable each effect.<br>
-              <span style="color: #60ee44;">In Fade In / Out Timer Interval:</span> Execution interval for each fade step.<br>
-              <span style="color: #60ee44;">In Fade In / Out Speed:</span> Speed of opacity change per step. Higher values = faster transitions.<br>
+                <p>
+                  <span style="color: #c40303;">Enable Fade In / Fade Out:</span> Set to true to enable each effect.<br>
+                  <span style="color: #60ee44;">In Fade In / Out Timer Interval:</span> Execution interval for each fade step.<br>
+                  <span style="color: #60ee44;">In Fade In / Out Speed:</span> Speed of opacity change per step. Higher values = faster transitions.<br>
+                </p>
 
                 <br>
                 <span class="strong">
@@ -427,9 +441,11 @@
               <div class="text">
                 Add Background Material.<br>
                 The following sites are recommended for textures used for effects.<br>
-                <a href="https://mebiusbox.github.io/contents/EffectTextureMaker/" target="_blank" rel="noopener noreferrer">
-                  EffectTextureMaker
-                </a>                
+                <div>
+                  <a href="https://mebiusbox.github.io/contents/EffectTextureMaker/" target="_blank" rel="noopener noreferrer">
+                    EffectTextureMaker
+                  </a>               
+                </div> 
               </div>
             </div>
 
