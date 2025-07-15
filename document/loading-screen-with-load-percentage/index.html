@@ -152,13 +152,13 @@
         <img src="image/3Show-loading-screen3.png" alt="3Show-loading-screen3">
         <div class="text">
           <div>
-            Next, drag the <span style="color: #3498db;">Return Value</span> of CreateWidget and use the <span class="strong">SetupLoadingScreen</span> function.
+            Next, drag the <span class="color-object">Return Value</span> of CreateWidget and use the <span class="strong">SetupLoadingScreen</span> function.
           </div>
           <div>
-            CreateWidget's <span style="color: #3498db;">Return Value</span> needs to be connected not only to the <span style="color: #3498db;">Target</span> but also to the <span style="color: #3498db;">Loading Widget</span>.
+            CreateWidget's <span class="color-object">Return Value</span> needs to be connected not only to the <span class="color-object">Target</span> but also to the <span class="color-object">Loading Widget</span>.
           </div>
 
-          <p><span style="color: #60ee44;">Minimum Display Time:</span>
+          <p><span class="color-float">Minimum Display Time:</span>
           specifies the minimum number of seconds of loading screen you want to display.</p>
         </div>
       </div>
@@ -166,9 +166,9 @@
       <div class="image-container">
         <img src="image/3Show-loading-screen4.png" alt="3Show-loading-screen4">
         <div class="text">
-          Next, drag the <span style="color: #3498db;">Return Value</span> of CreateWidgetReturn Value of CreateWidget and use the <span class="strong">BeginAsyncLoadWithPercentageUpdate</span> function.<br><br>
+          Next, drag the <span class="color-object">Return Value</span> of CreateWidgetReturn Value of CreateWidget and use the <span class="strong">BeginAsyncLoadWithPercentageUpdate</span> function.<br><br>
           
-         <span style="color: #ff009d;">In Object Path:</span>
+         <span class="color-string">In Object Path:</span>
           You need the object path of the level you want to open to open the level and get loading progress. It's a little confusing, so I'll write about it below.
           
         </div>
@@ -177,17 +177,17 @@
       <div class="image-container">
         <img src="image/3Show-loading-screen5.png" alt="3Show-loading-screen5">
         <div class="text">
-          <p style="margin-top: 0em; margin-bottom: 1em;"><span style="color: #60ee44;">In Timer Interval:</span>
+          <p style="margin-top: 0em; margin-bottom: 1em;"><span class="color-float">In Timer Interval:</span>
           Time interval to update percentages.
           </p>
         
-          <p><span style="color: #ff0000;">Use FInterp to Movement:</span>
+          <p><span class="color-bool">Use FInterp to Movement:</span>
           Smoothly move the progress bar and text that indicate loading progress. If you remove this check, accurate display will occur, but the values ​​will change rapidly.</p>
           <p>
-          <span style="color: #60ee44;">In Interp Speed:</span>
+          <span class="color-float">In Interp Speed:</span>
           The value used for FInterp to. The higher the value, the faster the loading progress will be.</p>
           <p>
-          <span style="color: #60ee44;">Min Change Amount with Target Limit:</span>
+          <span class="color-float">Min Change Amount with Target Limit:</span>
           FIntterp to moves much slower when approaching 100%, so set it to the lowest value.</p>
 
         </div>
@@ -195,7 +195,7 @@
       <div class="image-container">
         <img src="image/3Show-loading-screen6.png" alt="3Show-loading-screen6">
         <div class="text">
-        About In <span style="color: #ff009d;">Object Path</span>.<br>
+        About In <span class="color-string">Object Path</span>.<br>
         In my case the reference is<br>
         <b>/Script/Engine.World'/Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap'</b><br>
         Delete this first and last symbol.<br>
@@ -249,13 +249,13 @@
       <div class="image-container">
         <img src="image/4Supplement3.png" alt="4Supplement3">
         <div class="text">
-          In this example, we decided to put the map in a common folder and created an <span style="color: #ff009d;">ObjectPath</span> using <b>Append</b>.</span>
+          In this example, we decided to put the map in a common folder and created an <span class="color-string">ObjectPath</span> using <b>Append</b>.</span>
           <br><br>
-          <div>A: <span style="color: #ff009d;">MapFolderPath</span></div>
-          <div>B&D: <span style="color: #ff009d;">LevelName</span></div>
+          <div>A: <span class="color-string">MapFolderPath</span></div>
+          <div>B&D: <span class="color-string">LevelName</span></div>
           <div>C: .（dot） </div>
           <br>
-          This makes it easier to use because you only need to enter the <span style="color: #ff009d;">LevelName</span>.
+          This makes it easier to use because you only need to enter the <span class="color-string">LevelName</span>.
           
         </div>
       </div>
@@ -263,7 +263,7 @@
       <div class="image-container">
         <img src="image/4Supplement4.png" alt="4Supplement4">
         <div class="text">
-          We also recommend creating a Bool variable like <span style="color: #c40303;">IsLoading</span> to limit the display of loading screens.<br>
+          We also recommend creating a Bool variable like <span class="color-bool">IsLoading</span> to limit the display of loading screens.<br>
           If you set the default value to false, it will automatically become false after the level transition, which is convenient.
           
         </div>
@@ -302,8 +302,8 @@
               <div>This plugin will not work if you pause the game with <b>SetGamePaused</b>.</div>
               
               <div>You can pseudo-pause it by using <b>SetGlobalTimeDilation</b> (example: 0.0001).</div>
-              <div>I think it would be a good idea to set <span style="color: #60ee44;">InTimerInteraval</span> to a value that is one-tenth of GlobalTimeDilation (example: 0.00001).</div>
-              <div>In this example, <span style="color: #60ee44;">InInterpSpeed</span> ​​of 10000.0 seems good.</div>
+              <div>I think it would be a good idea to set <span class="color-float">InTimerInteraval</span> to a value that is one-tenth of GlobalTimeDilation (example: 0.00001).</div>
+              <div>In this example, <span class="color-float">InInterpSpeed</span> ​​of 10000.0 seems good.</div>
             </div>
           </div>
           
@@ -340,7 +340,7 @@
               This plugin does not work properly with asset localization.<br>
               This is an example of a countermeasure.<br>
               Get the current culture and use the switch node to create different widgets for each language.<br>
-              The variable to be set must be <span style="color: #3498db;">“LoadingScreenUserWidget”.</span><br>
+              The variable to be set must be <span class="color-object">“LoadingScreenUserWidget”.</span><br>
               <br>*Localization dashboard works fine.
 
             </div>
@@ -419,9 +419,9 @@
               <img src="image/7-2update1.png" alt="7-1update1.png">
               <div class="text">
                 <p style="margin-top: 0em;">
-                  <span style="color: #c40303;">Enable Fade In / Fade Out:</span> Set to true to enable each effect.<br>
-                  <span style="color: #60ee44;">In Fade In / Out Timer Interval:</span> Execution interval for each fade step.<br>
-                  <span style="color: #60ee44;">In Fade In / Out Speed:</span> Speed of opacity change per step. Higher values = faster transitions.<br>
+                  <span class="color-bool">Enable Fade In / Fade Out:</span> Set to true to enable each effect.<br>
+                  <span class="color-float">In Fade In / Out Timer Interval:</span> Execution interval for each fade step.<br>
+                  <span class="color-float">In Fade In / Out Speed:</span> Speed of opacity change per step. Higher values = faster transitions.<br>
                 </p>
 
                 <br>
@@ -454,7 +454,7 @@
             <div class="image-container">
               <img src="image/9update1.png" alt="9update1.png">
               <div class="text">
-                Use MakeArray and enter the ObjectPath in <span style="color: #ff009d;">InSublevelObjectPath</span>.
+                Use MakeArray and enter the ObjectPath in <span class="color-string">InSublevelObjectPath</span>.
               </div>
             </div>
 
