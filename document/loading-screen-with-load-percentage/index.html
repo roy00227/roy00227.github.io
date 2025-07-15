@@ -177,7 +177,7 @@
       <div class="image-container">
         <img src="image/3Show-loading-screen5.png" alt="3Show-loading-screen5">
         <div class="text">
-          <p><span style="color: #60ee44;">In Timer Interval:</span>
+          <p style="margin-top: 0em; margin-bottom: 1em;"><span style="color: #60ee44;">In Timer Interval:</span>
           Time interval to update percentages.
           </p>
         
@@ -280,10 +280,10 @@
       <div class="image-container">
         <img src="image/4Supplement6.png" alt="4Supplement6">
         <div class="text">
-          <p><div>Added on 2024/02/25.</div>
+          <div>Added on 2024/02/25.</div>
             <div>It is easier to adjust if SizeBox is a child of ScaleBox.</div>
             Set WidthOverride and HeightOverride to the size you expect.
-          </p>
+
           <p>
             <div>Added on 2024/10/15</div>
             *There was information that using ScaleBox and SizeBox at the same time increases the speed. It may be better not to use SizeBox.    
@@ -327,10 +327,8 @@
           <div class="image-container">
             <img src="image/5-2note.png" alt="5-2note">
             <div class="text">
-              <p>
-                <div>If you set the parent class to LoadingScreenUserWidget, you will not be able to open BP unless this plugin is enabled.</div>
-                <div> <span class="strong">Once you have edited your loading screen, we recommend that you take a backup by duplicating it and changing theparent class to UserWidget</span>.</div>
-              </p>
+              <div>If you set the parent class to LoadingScreenUserWidget, you will not be able to open BP unless this plugin is enabled.</div>
+              <div> <span class="strong">Once you have edited your loading screen, we recommend that you take a backup by duplicating it and changing theparent class to UserWidget</span>.</div>              
             </div>
           </div>
 
@@ -351,12 +349,14 @@
           <div class="image-container">
             <img src="image/5-3note2.png" alt="5-3note2.png">
             <div class="text">
+              
+              <div><b>postscript:</b></div>
+              <div>When using this plugin's functions on UMG, I found that there were problems with asset localization other than loading screens.</div>
+              <div>If you have a problem, move it to a custom event such as character or game mode and call it on UMG.</div>
+              
               <p>
-                <div><b>postscript:</b></div>
-                <div>When using this plugin's functions on UMG, I found that there were problems with asset localization other than loading screens.</div>
-              If you have a problem, move it to a custom event such as character or game mode and call it on UMG.
-              </p>
-              <span class="strong">It is important to use this plugin's functions outside of UMG.</span>
+              <span class="strong">It is important to use this plugin's functions outside of UMG.</span></p>
+</div>
 
             </div>
           </div>
@@ -404,7 +404,7 @@
             <div class="image-container">
               <img src="image/7-1update1.png" alt="7-1update1.png">
               <div class="text">
-                <p>This is the loading screen BP.</p>
+                <p style="margin-top: 0.0em;">This is the loading screen BP.</p>
                 <p>
                   <div><b>EventOnPercentageUpdate:</b> Event called every time a percentage is updated.</div>
                   <div><b>GetLoadPercentaeg:</b> Pure function to get load percentage.</div>
@@ -418,7 +418,7 @@
             <div class="image-container">
               <img src="image/7-2update1.png" alt="7-1update1.png">
               <div class="text">
-                <p>
+                <p style="margin-top: 0em;">
                   <span style="color: #c40303;">Enable Fade In / Fade Out:</span> Set to true to enable each effect.<br>
                   <span style="color: #60ee44;">In Fade In / Out Timer Interval:</span> Execution interval for each fade step.<br>
                   <span style="color: #60ee44;">In Fade In / Out Speed:</span> Speed of opacity change per step. Higher values = faster transitions.<br>

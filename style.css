@@ -124,6 +124,9 @@ h1, h2 {
   flex: 1;
 }
 
+.paragraph {
+  margin-top: 1em; /* 上に余白 */
+}
 
 #toc {
   background: #f9f9f9;
