@@ -1,4 +1,0 @@
-baseurl: ""
-
-plugins:
-  - jekyll-sitemap
