@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>roy00227-site</title>
+  <link rel="stylesheet" href="../style.css">
+  <script defer src="../js/load-common.js"></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (typeof loadCommonParts === "function") {
+        loadCommonParts();
+      }
+    });
+  </script>
+</head>
+<body>
+  <div id="header"></div>
+
+  <main class="container">
+    <center>
+      <h1>ポートフォリオ</h1>
+    </center>
+
+    
+    <!-- 目次 -->
+    <nav id="toc">
+      <h2>目次</h2>
+      <ul id="toc-list"></ul>
+    </nav>
+    <!-- 目次の項目を自動で追加するスクリプト -->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const tocList = document.getElementById("toc-list");
+      const headings = document.querySelectorAll("h2, h3");
+      headings.forEach((heading, index) => {
+        // 目次セクション内の見出しは除外
+        if (heading.closest("#toc")) return;
+
+        if (!heading.id) {
+          heading.id = `heading-${index}`;
+        }
+        const li = document.createElement("li");
+        li.style.marginLeft = heading.tagName === "H3" ? "20px" : "0";
+        li.innerHTML = `<a href="#${heading.id}">${heading.textContent}</a>`;
+        tocList.appendChild(li);
+      });
+    });
+    </script>
+
+    
+    <h2>自己紹介</h2>    
+      <div class="image-container">
+        <img src="image/logo.png" alt="Activate the plugin1">
+        <div class="text">
+            <div>私はroy00227という名前でUEエンジニアとして活動しています。</div>
+            <div>UnrealEngineでゲームやプラグインの開発と販売をしています。</div>
+
+            <div style="margin-top: 1em;">
+                <a href="http://tiny.cc/roy00227vitae" target="_blank" rel="noopener noreferrer">
+                    職務経歴書はこちら
+                </a>
+            </div>
+        </div>
+      </div>
+
+    
+    <br><h2>Loading Screen With Load Percentage(UEプラグイン)</h2>  
+      <div class="image-container">
+        <img src="../image/product/loading-screen-with-load-percentage/main.png" alt="Loading Screen With Load Percentage">
+        <div class="text">
+            <div>
+                2023年10月にマーケットプレイスで発売したUE5のロード画面のプラグインです。
+            </div>
+            <p>
+                <div>
+                    <a href="https://www.unrealengine.com/marketplace/ja/product/loading-screen-with-load-percentage" target="_blank" rel="noopener noreferrer">
+                        販売ページ
+                    </a> 
+                </div>
+                <div>
+                    <a href="https://roy00227.github.io/document/loading-screen-with-load-percentage/index.html" target="_blank" rel="noopener noreferrer">
+                        ドキュメント
+                    </a> 
+                </div>
+            </p>
+            <div>
+                このプラグインは基本的に、UMGをスレートウィジェットに変換し、ロードパーセントを取得して表示するためのものです。
+            </div>
+            <div>
+                アップデートでフェードインとフェードアウトに対応し、ローディングサインマテリアルやバックグラウンドマテリアルを追加しました。
+            </div>
+            <div>
+                またロードパーセントが変更されるごとにBPのイベントが発火するため、マテリアルを使ったサークルプログレスバーにも対応しています。
+            </div>
+            
+        </div>
+      </div>
+
+    <br><h2>Wizard of Hunting Life(UE製ゲーム)</h2>   
+      <div class="image-container">
+        <img src="../image/product/wizard-of-hunting-life/main.png" alt="Wizard of Hunting Life">
+        <div class="text">
+            <div>
+                UE4・5で作り、2022年6月にSteamで発売したゲームです。
+            </div>
+            <p>
+                <div>
+                    <a href="https://store.steampowered.com/app/1921040/Wizard_of_Hunting_Life/" target="_blank" rel="noopener noreferrer">
+                        販売ページ
+                    </a> 
+                </div>
+            </p>
+            <div>黒い砂漠やモンスターハンターを意識した作品ですが、うまくはいきませんでした。</div>
+            <div>いつかリメイクできたらと思っています。</div>
+        </div>
+ 
+      
+
+    
+  </main>
+
+  <div id="footer"></div>
+</body>
+</html>
