@@ -27,6 +27,13 @@ body {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
 }
 
+.site-title{  
+    font-size: 48px;
+    font-weight: bold;
+    color: #0e3561; /* 元の文字色 */
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.5);
+}
+
 /* ヘッダーとフッター：bodyと同じ背景色で統一感を出す */
 header, footer {
   background-color: #ebf3fc;
