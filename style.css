@@ -30,8 +30,7 @@ body {
 .site-title{  
     font-size: 48px;
     font-weight: bold;
-    color: #0e3561; /* 元の文字色 */
-    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.5);
+    color: #000000; /* 元の文字色 */
 }
 
 /* ヘッダーとフッター：bodyと同じ背景色で統一感を出す */
