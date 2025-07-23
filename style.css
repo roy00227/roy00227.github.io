@@ -150,6 +150,36 @@ h2 {
   margin-top: 1em; /* 上に余白 */
 }
 
+/* YouTube動画などをレスポンシブにするためのラッパー */
+.video-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 のアスペクト比 (高さ / 幅 = 9 / 16 = 0.5625) */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%; /* 親要素の幅を超えないように */
+    background: #000; /* 動画が読み込まれるまでの背景色 */
+}
+
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ★ここを修正/確認★ .image-container 内の動画ラッパー (.video-responsive) のPCでの挙動 */
+.image-container .video-responsive {
+    max-width: 600px; /* PCでの動画の最大幅を明確に指定 (例: 600px) */
+    width: 100%;     /* 親要素の幅に合わせつつ、max-widthで制限 */
+    flex-shrink: 0;  /* Flexbox内で縮小させない（最大幅を保つ） */
+    /* flex-grow: 0; と flex-basis: auto; を明示的に追加しても良い */
+    flex-basis: auto;
+    flex-grow: 0;
+    flex: 0 0 600px; /* shorthand for flex-grow:0, flex-shrink:0, flex-basis:600px */
+                     /* もしテキストとのバランスで調整が必要なら flex-basis も検討 */
+}
+
 
 /* 画像や動画の右にテキストを表示するための小さいコンテナ */
 .image-container-small {
@@ -224,7 +254,7 @@ h2 {
 
 @media (max-width: 767px) {
     body {
-        font-size: 8px;
+        font-size: 12px;
     }    
     .image-container img {  
       max-width: 380px;    /* 横幅の最大値を制限 */
@@ -242,7 +272,7 @@ h2 {
 /* --- スマホ縦向き (480px以下) --- */
 @media (max-width: 480px) {
     body {
-        font-size: 12px; /* さらに小さめに (ただし読める範囲で) */
+        font-size: 8px; /* さらに小さめに (ただし読める範囲で) */
     }    
   .image-container img {  
     max-width: 240px;    /* 横幅の最大値を制限 */
