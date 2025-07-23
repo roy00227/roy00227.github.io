@@ -125,6 +125,11 @@ h2 {
   margin-bottom: 1.5em;
 }
 
+.image-container iframe{
+  max-width: 600px;    /* 横幅の最大値を制限 */
+  flex-shrink: 0;
+  display: block;
+}
 
 .image-container img {  
   max-width: 600px;    /* 横幅の最大値を制限 */
