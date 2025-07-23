@@ -7,6 +7,8 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  word-wrap: break-word;   /* 長い単語を途中で改行させる (IEなど古いブラウザ向け) */
+  overflow-wrap: break-word; /* 長い単語を途中で改行させる (推奨される新しいプロパティ) */
 }
 
 /* 中央の白い箱＋左右枠線 
@@ -123,11 +125,6 @@ h2 {
   margin-bottom: 1.5em;
 }
 
-.image-container iframe{
-  max-width: 600px;    /* 横幅の最大値を制限 */
-  flex-shrink: 0;
-  display: block;
-}
 
 .image-container img {  
   max-width: 600px;    /* 横幅の最大値を制限 */
@@ -138,6 +135,10 @@ h2 {
 
 .image-container .text {
   flex: 1;
+  /* 長い文字列の強制改行 */
+  word-break: break-all;     /* 単語の途中でも強制的に改行させる */
+  overflow-wrap: break-word; /* 念のため（現代ブラウザ向け） */
+  white-space: normal;       /* 改行禁止を解除 */
 }
 
 .paragraph {
@@ -219,11 +220,35 @@ h2 {
 @media (max-width: 767px) {
     body {
         font-size: 8px;
+    }    
+    .image-container img {  
+      max-width: 380px;    /* 横幅の最大値を制限 */
+      height: auto;
+      flex-shrink: 0;
+      display: block;
+    }    
+    .image-container img {  
+      max-width: 380px;    /* 横幅の最大値を制限 */
+      height: auto;
+      flex-shrink: 0;
+      display: block;
     }
   }
 /* --- スマホ縦向き (480px以下) --- */
 @media (max-width: 480px) {
     body {
         font-size: 12px; /* さらに小さめに (ただし読める範囲で) */
-    }
+    }    
+  .image-container img {  
+    max-width: 240px;    /* 横幅の最大値を制限 */
+    height: auto;
+    flex-shrink: 0;
+    display: block;
   }
+    .image-container img {  
+    max-width: 240px;    /* 横幅の最大値を制限 */
+    height: auto;
+    flex-shrink: 0;
+    display: block;
+  }
+}
