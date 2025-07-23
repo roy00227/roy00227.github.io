@@ -8,17 +8,6 @@ body {
   padding: 0;
   line-height: 1.6;
 }
-@media (max-width: 767px) {
-    body {
-        font-size: 8px;
-    }
-    h1 {
-        font-size: 1.5em;
-    }
-    h2 {
-        font-size: 1em; 
-    }
-  }
 
 /* 中央の白い箱＋左右枠線 
     トップ用に細いもの*/
@@ -65,11 +54,9 @@ a:hover {
 
 h1 {
   margin-top: 0;
-  font-size: 2em;
 }
 h2 {
   margin-top: 0;
-  font-size: 1.5em;
 }
 
 .product {
@@ -227,3 +214,16 @@ h2 {
 .color-transform  { color: #FE7100; } 
 .color-object     { color: #01A4EE; } 
 
+
+
+@media (max-width: 767px) {
+    body {
+        font-size: 8px;
+    }
+  }
+/* --- スマホ縦向き (480px以下) --- */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px; /* さらに小さめに (ただし読める範囲で) */
+    }
+  }
