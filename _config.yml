@@ -1,5 +1,2 @@
 plugins:
   - jekyll-sitemap
-  
-redirect_from:
-  - /index.html
