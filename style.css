@@ -6,7 +6,6 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
   word-wrap: break-word;   /* 長い単語を途中で改行させる (IEなど古いブラウザ向け) */
   overflow-wrap: break-word; /* 長い単語を途中で改行させる (推奨される新しいプロパティ) */
 }
