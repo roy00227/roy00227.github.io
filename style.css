@@ -16,16 +16,16 @@ body {
 .narrowContainer {
   background-color: #fff; /* ← 白背景！ */
   max-width: 800px;
-  margin: 2em auto;
+  margin: auto;
   padding: 1.5em;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* 中央の白い箱＋左右枠線 */
 .container {
   background-color: #fff; /* ← 白背景！ */
   max-width: 1200px;
-  margin: 2em auto;
+  margin: auto;
   padding: 1.5em;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
 }
@@ -40,7 +40,6 @@ body {
 header, footer {
   background-color: #ebf3fc;
   color: #003366;
-  padding: 1em 0;
   text-align: center; /* ← これで中央揃え */
 }
 
