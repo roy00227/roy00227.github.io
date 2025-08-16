@@ -40,7 +40,6 @@ header, footer {
   background-color: #ebf3fc;
   color: #003366;
   text-align: center; /* ← これで中央揃え */
-  padding: 30px;
 }
 
 /* リンク */
