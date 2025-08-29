@@ -41,6 +41,10 @@ body {
   text-align: center; /* ← これで中央揃え */
 }
 
+.home header {
+  display: none;
+}
+
 h1 {
   font-family: 'M PLUS Rounded 1c', sans-serif;
   font-size: 1.75em;
