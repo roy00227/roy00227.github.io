@@ -114,7 +114,7 @@ a:hover {
   text-decoration: underline;
 }
 
-.product-info h3 {
+.product-info h4 {
   margin: 0;
   font-size: 1.2em;
   margin-top: -0.5em; /* 上部の隙間をなくす */
