@@ -30,14 +30,15 @@ body {
 }
 
 .site-title{  
-    font-size: 3em;
-    font-weight: bold;
+  font-size: 3em;
+  font-weight: bold;
   padding-bottom: 5px;
   margin-top: 30px;
   margin-bottom: 15px;
   background-image: linear-gradient(45deg, #005a96, #000000); /* 派手なグラデーション */
   -webkit-background-clip: text; /* 文字をクリッピングマスクとして使用 */
   -webkit-text-fill-color: transparent; /* 文字色を透明にする */
+  text-align: center; /* ← これで中央揃え */
 }
 
 h1 {
