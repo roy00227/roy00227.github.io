@@ -81,7 +81,7 @@ header, footer {
 
 /* リンク */
 a {
-  color: #007acc;
+  color: #005a96;
   text-decoration: none;
 }
 
@@ -108,7 +108,7 @@ a:hover {
 .product-info a {
   font-size: 1.1em;
   text-decoration: none;
-  color: #007acc;
+  color: #005a96;
 }
 
 .product-info a:hover {
@@ -136,7 +136,7 @@ a:hover {
 
 .product-links li a {
   text-decoration: none;
-  color: #007acc;
+  color: #005a96;
 }
 
 .product-links li a:hover {
