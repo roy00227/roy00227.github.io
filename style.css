@@ -2,7 +2,7 @@
 body {
   font-family: sans-serif;  
   font-size: 16px; /* 例: PCでの基準フォントサイズ */
-  background-color: #ebf3fc; /* 枠の外側＋ヘッダー/フッターと同じ色 */
+  background-color: #F1F3F5; /* ごく薄い灰色 */
   color: #333;
   margin: 0;
   padding: 0;
@@ -18,7 +18,7 @@ body {
   max-width: 800px;
   margin: auto;
   padding: 1.5em;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.05);
+  border: 1.5px solid #000000; /* 枠線を追加 */
 }
 
 /* 中央の白い箱＋左右枠線 */
@@ -27,7 +27,7 @@ body {
   max-width: 1200px;
   margin: auto;
   padding: 1.5em;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  border: 1.5px solid #000000; /* 枠線を追加 */
 }
 
 .site-title{  
@@ -37,9 +37,6 @@ body {
   padding-bottom: 5px;
   margin-top: 30px;
   margin-bottom: 15px;
-  background-image: linear-gradient(45deg, rgb(0, 138, 230), #000000); /* 派手なグラデーション */
-  -webkit-background-clip: text; /* 文字をクリッピングマスクとして使用 */
-  -webkit-text-fill-color: transparent; /* 文字色を透明にする */
   text-align: center; /* 中央寄せ */
 }
 
@@ -54,9 +51,6 @@ h1{
   padding-bottom: 5px;
   margin-top: 30px;
   margin-bottom: 15px;
-  background-image: linear-gradient(45deg, rgb(0, 138, 230), #000000); /* 派手なグラデーション */
-  -webkit-background-clip: text; /* 文字をクリッピングマスクとして使用 */
-  -webkit-text-fill-color: transparent; /* 文字色を透明にする */
   text-align: center; /* 中央寄せ */
 }
 
@@ -67,14 +61,11 @@ h2, h3, h4 {
   padding-bottom: 5px;
   margin-top: 30px;
   margin-bottom: 15px;
-  background-image: linear-gradient(45deg, #005a96, #000000); /* 派手なグラデーション */
-  -webkit-background-clip: text; /* 文字をクリッピングマスクとして使用 */
-  -webkit-text-fill-color: transparent; /* 文字色を透明にする */
 }
 
 /* ヘッダーとフッター：bodyと同じ背景色で統一感を出す */
 header, footer {
-  background-color: #ebf3fc;
+  background-color: #F1F3F5;
   color: #003366;
   text-align: center; /* ← これで中央揃え */
 }
