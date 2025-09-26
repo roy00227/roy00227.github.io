@@ -2,7 +2,7 @@
 body {
   font-family: sans-serif;  
   font-size: 16px; /* 例: PCでの基準フォントサイズ */
-  background-color: #F0F1F3;
+  background-color: #476998;
   margin: 0;
   padding: 0;
   word-wrap: break-word;   /* 長い単語を途中で改行させる (IEなど古いブラウザ向け) */
@@ -36,7 +36,8 @@ body {
   padding-bottom: 5px;
   margin-top: 30px;
   margin-bottom: 15px;
-  text-align: center; /* 中央寄せ */
+  text-align: center; /* 中央寄せ */  
+  color: white;
 }
 
 .home header {
@@ -64,8 +65,9 @@ h2, h3, h4 {
 
 /* ヘッダーとフッター：bodyと同じ背景色で統一感を出す */
 header, footer {
-  background-color: #F0F1F3;
+  background-color: #476998;
   text-align: center; /* ← これで中央揃え */
+  color: white;
 }
 
 /* リンク */
