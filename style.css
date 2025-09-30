@@ -43,9 +43,8 @@ h1{
   text-align: center; /* 中央寄せ */
 }
 .home h1 {
-  padding-bottom: 0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  padding: 0px;
+  margin: 0px;
 }
 
 footer {  
