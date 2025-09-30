@@ -21,12 +21,7 @@ body {
   display: flex; /* 修正 */
   align-items: center; /* 追加 */
   justify-content: center; /* 追加 */
-  
   background-image: linear-gradient(to right, #476997, #476997, #2C4260);
-
-  /* 上下の余白をマイナスにして、ぴったりとくっつける */
-  margin-top: 0px;
-  height: 100px;
 }
 .home header {
   display: none;
