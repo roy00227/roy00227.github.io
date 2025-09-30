@@ -10,6 +10,7 @@ body {
   padding: 0;
   word-wrap: break-word;   /* 長い単語を途中で改行させる (IEなど古いブラウザ向け) */
   overflow-wrap: break-word; /* 長い単語を途中で改行させる (推奨される新しいプロパティ) */
+  overflow-y: scroll; /*サイトタイトルの左右位置を合わせるために、スクロールバーを常に表示*/
 }
 
 
@@ -65,6 +66,7 @@ footer {
   margin: auto;
   padding: 1.5em;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.05); /* 影を薄くする */
+  
 }
 
 /* 中央の白い箱＋左右枠線 */
