@@ -12,6 +12,11 @@ body {
   overflow-wrap: break-word; /* 長い単語を途中で改行させる (推奨される新しいプロパティ) */
 }
 
+
+header{
+  height: 120px;
+}
+
 /*header内で使用。トップだけヘッダーは非表示*/
 .site-title {
   font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -22,9 +27,25 @@ body {
   align-items: center; /* 追加 */
   justify-content: center; /* 追加 */
   background-image: linear-gradient(to right, #476997, #476997, #2C4260);
+  height: 120px;
 }
 .home header {
   display: none;
+}
+
+h1{  
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 3em;
+  font-weight: bold;
+  padding-bottom: 5px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  text-align: center; /* 中央寄せ */
+}
+.home h1 {
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 footer {  
@@ -56,18 +77,6 @@ footer {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.05); /* 影を薄くする */
 }
 
-
-
-
-h1{  
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-  font-size: 3em;
-  font-weight: bold;
-  padding-bottom: 5px;
-  margin-top: 30px;
-  margin-bottom: 15px;
-  text-align: center; /* 中央寄せ */
-}
 
 h2, h3, h4 {
   font-family: 'M PLUS Rounded 1c', sans-serif;
