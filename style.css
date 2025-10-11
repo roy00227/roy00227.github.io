@@ -2,8 +2,7 @@
 body {
   font-family: sans-serif;  
   font-size: 16px; /* 例: PCでの基準フォントサイズ */
-  /* 青系のグラデーションを適用 */
-  background-image: linear-gradient(to right, #476997, #476997,#15202e);
+  background-color: #476997;
   
   margin: 0;
   padding: 0;
@@ -26,7 +25,7 @@ header{
   display: flex; /* 修正 */
   align-items: center; /* 追加 */
   justify-content: center; /* 追加 */
-  background-image: linear-gradient(to right, #476997, #476997,#15202e);
+  background-color: #476997;
   height: 120px;
 }
 .home header {
@@ -48,7 +47,7 @@ h1{
 }
 
 footer {  
-  background-image: linear-gradient(to right, #476997, #476997,#15202e);
+  background-color: #476997;
   text-align: center; /* ← これで中央揃え */
   height: 50px;;
   display: flex; /* Flexboxコンテナに指定 */
