@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Unreal Engineメモ-UE5.6-問題：VRプレビューで影が表示されない</title>
+  <title>Unreal Engineメモ-UE5.6-Quest3Sで実行したアプリのログを表示する方法</title>
   <link rel="stylesheet" href="../../../../style.css">
   <script defer src="../../../../js/load-common.js"></script>
   <script defer>
@@ -25,25 +25,33 @@
 
   <main class="container">
     <center>
-      <h1>2025/08/11-UE5.6-問題：VRプレビューで影が表示されない</h1>
+      <h1>2025/10/31-UE5.6-Quest3Sで実行したアプリのログを表示する方法</h1>
     </center>
 
     <section>
-      <h2>問題</h2>
-      <p>
-        エディタのビューポートでは表示される影が、Quest3Sだと表示されない。
-      </p>
-    </section>
-
-    <section>
-      <h2>解決</h2>
       <div class="image-container">
-        <img src="image.png" alt="image">
+        <img src="image1.png" alt="image">
         <div class="text">
-          プロジェクト設定でエンジン-レンダリングのモバイルセクションにある「可動SpotlightShadowsをサポート」のチェックボックスをTrueにする。
+          <div>
+            接続したQuest3Sが認識できる状態で、PCのコマンドプロンプトやターミナルで「adb logcat -s UE」と入力。
+          </div>
+          <div>
+            ログの取得を止めるには Ctrl + C を押す。
+          </div>          
         </div>
       </div>
     </section>
+
+    <section>
+      <div class="image-container">
+        <img src="image2.png" alt="image">
+        <div class="text">
+          認識してるか確認するコマンドは「adb devices」。
+        </div>
+      </div>
+    </section>
+
+    
               
   </main>
 
