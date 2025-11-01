@@ -1,36 +1,46 @@
-# This is a basic workflow to help you get started with Actions
+# .github/workflows/deploy.yml (ファイル名は任意ですが、わかりやすいものが良いです)
 
-name: CI
+name: Eleventy Build and Deploy
 
-# Controls when the workflow will run
+# mainブランチへのプッシュ、またはプルリクエストで実行
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# 以下の環境変数を設定（ビルド時の設定に合わせて修正）
+env:
+  NODE_VERSION: 20 # 使用するNode.jsのバージョン。20以上を推奨
+  BUILD_DIR: _site # Eleventyの出力先ディレクトリ
+
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+      - name: Checkout repository 
+        uses: actions/checkout@v4
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Setup Node.js 
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: Install dependencies 
+        run: npm install
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      # Eleventyのビルドコマンドを実行
+      - name: Build Eleventy site 
+        run: npx @11ty/eleventy
+
+      # --- GitHub Pagesへのデプロイ ---
+      # outputで指定したフォルダ（_site）の内容をgh-pagesブランチにデプロイ
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ env.BUILD_DIR }}
+          # ★ 重要 ★: .gitignoreで_siteを無視している場合でも、このアクションが処理します
+          # files: "**"
