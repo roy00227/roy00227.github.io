@@ -19,6 +19,9 @@ module.exports = function(eleventyConfig) {
     // CSSファイル
     eleventyConfig.addPassthroughCopy("style.css");
     eleventyConfig.addPassthroughCopy("js");
+
+    eleventyConfig.addPassthroughCopy("google224cc59b9c585584.html");
+    
     
     // ----------------------------------------
     // �� image�t�H���_�̒ǉ� ��
