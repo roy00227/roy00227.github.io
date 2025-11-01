@@ -1,0 +1,54 @@
+name: Eleventy Build and Deploy
+
+on:
+  push:
+    branches: ["main"]
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build: # deployジョブの名前をbuildに変更（ビルドとデプロイを兼ねるため）
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # --- ★ Eleventyのビルドに必要なステップを追加 ★ ---
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20 # 安定したバージョンを指定
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm install
+
+      # Eleventyのビルドを実行
+      - name: Build Eleventy site
+        run: npx @11ty/eleventy
+      # ----------------------------------------------------
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # ★ 変更 ★: Eleventyの出力フォルダ（_site）を指定
+          path: '_site' 
+          
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
