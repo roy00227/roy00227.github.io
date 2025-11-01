@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Document-LoadingScreenWithLoadPercentage</title> 
+    <link rel="stylesheet" href="/style.css">
+  
+    <meta name="description" content="roy00227の個人サイトです。Unreal Engineに関する技術メモなどを公開しています。" />
+    
+        <link rel="icon" type="image/x-icon" href="/favicon.ico">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="apple-touch-icon" href="/android-chrome-192x192.png">
+        <link rel="manifest" href="/manifest.json">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="">
+    <header>
+        <header>
+    <div class="site-title">
+        roy00227-site
+    </div>
+</header>
+ </header>
+
+    <main>
+        
+  <main class="container">
+    <center>
+      <h1>Document-LoadingScreenWithLoadPercentage</h1>
+    </center>
+
+
+<div class="video-container">
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/PbietvmW3VI?si=iJ6ff_ZxkWeI0zSz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+  <div class="text">
+    <div>
+      <a href="https://www.fab.com/ja/listings/179be80a-b024-4442-ae08-c0ddf90d3ac3" target="_blank" rel="noopener noreferrer">
+        Fab-9.99$
+      </a>
+    </div>
+    This is a plugin that converts UMG into a slate widget, displays a loading screen, and displays the loading percentage with a progress bar and text.
+  </div>
+</div>
+    
+
+  <div class="video-container">
+    <div class="video-wrapper">   
+      <iframe src="https://www.youtube.com/embed/jiK6FFqifMg" title="Unreal Engine Plugin_How to use  &quot;Loading Screen With Load Percentage&quot;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+    </div>
+    <div class="text">
+      This is a video on how to use it.
+    </div>
+  </div>
+    
+
+    <!-- 目次 -->
+    <nav id="toc">
+      <h2>Table of Contents</h2>
+      <ul id="toc-list"></ul>
+    </nav>
+    <!-- 目次の項目を自動で追加するスクリプト -->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const tocList = document.getElementById("toc-list");
+      const headings = document.querySelectorAll("h2, h3");
+      headings.forEach((heading, index) => {
+        // 目次セクション内の見出しは除外
+        if (heading.closest("#toc")) return;
+
+        if (!heading.id) {
+          heading.id = `heading-${index}`;
+        }
+        const li = document.createElement("li");
+        li.style.marginLeft = heading.tagName === "H3" ? "20px" : "0";
+        li.innerHTML = `<a href="#${heading.id}">${heading.textContent}</a>`;
+        tocList.appendChild(li);
+      });
+    });
+    </script>
+    
+    <h2>1.Activate the plugin</h2>    
+      <div class="image-container">
+        <img src="image/1Activate the plugin1.png" alt="Activate the plugin1">
+        <div class="text">
+          The plugin should probably be enabled by default, but if you can't use it, see below.
+          First, activate the plugin.
+        </div>
+      </div>
+
+      <div class="image-container">
+        <img src="image/1Activate the plugin2.png" alt="Activate the plugin2">
+        <div class="text">
+          Check the plugin and restart the editor.
+        </div>
+      </div>
+      
+      
+    <h2>2.Configure UMG</h2>
+
+      <div class="image-container">
+        <img src="image/2Configure UMG1.png" alt="Configure UMG1">
+        <div class="text">
+          Open the Plugin/LoadingScreenWithLoadPercentage Content folder.
+        </div>
+      </div>
+
+      <div class="image-container">
+        <img src="image/2Configure UMG2.png" alt="Configure UMG2">
+        <div class="text">
+          If you can't see the plugin folder, check Show Plugin Content.
+        </div>
+      </div>
+    
+      <div class="image-container">
+        <img src="image/2Configure UMG3.png" alt="Configure UMG3">
+        <div class="text">
+          If you don't have your own UMG loading screen, duplicate BP_LoadingScreenUserWidget and move it to your content folder.
+        </div>
+      </div>
+
+      <div class="image-container">
+        <img src="image/2Configure UMG4.png" alt="Configure UMG4">
+        <div class="text">
+          If you want to use your own UMG loading screen, change ParentClass in ClassSettings to LoadingScreenUserWidget.
+        </div>
+      </div>
+
+      <div class="image-container">
+        <img src="image/2Configure UMG5.png" alt="Configure UMG5">
+        <div class="text">
+          If you want to display loading progress in a bar, it must be a <span class="strong">ProgressBar</span>.
+        </div>
+      </div>
+
+      <div class="image-container">
+        <img src="image/2Configure UMG6.png" alt="Configure UMG6">
+        <div class="text">
+          If you want to display the loading progress as text, it must be <span class="strong">Text</span>.
+          
+          Also, the Text of Content must be half-width or full-width <span class="strong">%</span>.
+        </div>
+      </div>
+      
+    
+
+      <h2>3.Show loading screen</h2>
+
+      <div class="image-container">
+        <img src="image/3Show-loading-screen1.png" alt="3Show-loading-screen1">
+        <div class="text">
+          Here we will use a loading screen with the default character as an example.
+        </div>
+      </div>
+
+      <div class="image-container">
+        <img src="image/3Show-loading-screen2.png" alt="3Show-loading-screen2">
+        <div class="text">
+          First, select the loading screen you want to use with Create Widget.
+        </div>
+      </div>  
+      
+      <div class="image-container">
+        <img src="image/3Show-loading-screen3.png" alt="3Show-loading-screen3">
+        <div class="text">
+          <div>
+            Next, drag the <span class="color-object">Return Value</span> of CreateWidget and use the <span class="strong">SetupLoadingScreen</span> function.
+          </div>
+          <div>
+            CreateWidget's <span class="color-object">Return Value</span> needs to be connected not only to the <span class="color-object">Target</span> but also to the <span class="color-object">Loading Widget</span>.
+          </div>
+
+          <p><span class="color-float">Minimum Display Time:</span>
+          specifies the minimum number of seconds of loading screen you want to display.</p>
+        </div>
+      </div>
+      
+      <div class="image-container">
+        <img src="image/3Show-loading-screen4.png" alt="3Show-loading-screen4">
+        <div class="text">
+          Next, drag the <span class="color-object">Return Value</span> of CreateWidgetReturn Value of CreateWidget and use the <span class="strong">BeginAsyncLoadWithPercentageUpdate</span> function.
+          
+         <span class="color-string">In Object Path:</span>
+          You need the object path of the level you want to open to open the level and get loading progress. It's a little confusing, so I'll write about it below.
+          
+        </div>
+      </div>
+
+      <div class="image-container">
+        <img src="image/3Show-loading-screen5.png" alt="3Show-loading-screen5">
+        <div class="text">
+          <p style="margin-top: 0em; margin-bottom: 1em;"><span class="color-float">In Timer Interval:</span>
+          Time interval to update percentages.
+          </p>
+        
+          <p><span class="color-bool">Use FInterp to Movement:</span>
+          Smoothly move the progress bar and text that indicate loading progress. If you remove this check, accurate display will occur, but the values ​​will change rapidly.</p>
+          <p>
+          <span class="color-float">In Interp Speed:</span>
+          The value used for FInterp to. The higher the value, the faster the loading progress will be.</p>
+          <p>
+          <span class="color-float">Min Change Amount with Target Limit:</span>
+          FIntterp to moves much slower when approaching 100%, so set it to the lowest value.</p>
+
+        </div>
+      </div>
+      <div class="image-container">
+        <img src="image/3Show-loading-screen6.png" alt="3Show-loading-screen6">
+        <div class="text">
+        About In <span class="color-string">Object Path</span>.
+        In my case the reference is
+        <b>/Script/Engine.World'/Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap'</b>
+        Delete this first and last symbol.
+        <p><span class="strong">/Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap</span></p>   
+        
+        <div>Be careful not to make a mistake.</div>
+        <div>・Add <span class="strong">/</span>(a slash) in front of Game</div>
+        <div>・Delete the last <span class="strong">'</span>(single quote character)</div>
+        
+      </div>
+      </div>
+      <div class="image-container">
+        <img src="image/3Show-loading-screen7.png" alt="3Show-loading-screen7">
+        <div class="text">
+          If you play in the viewport or editor window, you can see the percentage movement in the output log.
+          Searching for Logtemp is invalid.
+          <p>
+          <div><b>TargetPercentage:</b> Actual progress.Target of FInterpTo.</div>
+          <div><b>CurrentPercentage:</b> Percentage of progress bar or text.</div>
+          <div><b>ElapsedTime:</b> Elapsed time since loading started.</div>
+          </p>
+          Adjust it to your liking.
+        </div>
+      </div>
+      
+      <div class="image-container">
+        <img src="image/3Show-loading-screen8.png" alt="3Show-loading-screen8">
+        <div class="text">
+          The output log can be displayed from the Window at the top left.
+        </div>
+      </div>
+
+      
+      <h2>4.Supplement</h2>
+
+      <div class="image-container">
+        <img src="image/4Supplement1.png" alt="4Supplement1">
+        <div class="text">
+          Loading screen editing must be done before SetupLoadingScreen.
+        </div>
+      </div>
+
+      <div class="image-container">
+        <img src="image/4Supplement2.png" alt="4Supplement2">
+        <div class="text">
+          recommend using <b>custom events</b> and <b>interfaces</b> to make it easier to use.
+          If you want to change it, you can just change that part.
+        </div>
+      </div>
+
+      <div class="image-container">
+        <img src="image/4Supplement3.png" alt="4Supplement3">
+        <div class="text">
+          In this example, we decided to put the map in a common folder and created an <span class="color-string">ObjectPath</span> using <b>Append</b>.</span>
+          
+          <div>A: <span class="color-string">MapFolderPath</span></div>
+          <div>B&D: <span class="color-string">LevelName</span></div>
+          <div>C: .（dot） </div>
+          
+          This makes it easier to use because you only need to enter the <span class="color-string">LevelName</span>.
+          
+        </div>
+      </div>
+
+      <div class="image-container">
+        <img src="image/4Supplement4.png" alt="4Supplement4">
+        <div class="text">
+          We also recommend creating a Bool variable like <span class="color-bool">IsLoading</span> to limit the display of loading screens.
+          If you set the default value to false, it will automatically become false after the level transition, which is convenient.
+          
+        </div>
+      </div>
+        
+      <div class="image-container">
+        <img src="image/4Supplement5.png" alt="4Supplement5">
+        <div class="text">
+          For the loading screen widget, we recommend using <b>Scale Box</b>, Stretch to <b>Scale to Fit</b>, and Stretch Direction to <b>Both</b>. (If you do not do this, the display may change during Open Level)
+          
+        </div>
+      </div>   
+
+      <div class="image-container">
+        <img src="image/4Supplement6.png" alt="4Supplement6">
+        <div class="text">
+          <div>Added on 2024/02/25.</div>
+            <div>It is easier to adjust if SizeBox is a child of ScaleBox.</div>
+            Set WidthOverride and HeightOverride to the size you expect.
+
+          <p>
+            <div>Added on 2024/10/15</div>
+            *There was information that using ScaleBox and SizeBox at the same time increases the speed. It may be better not to use SizeBox.    
+          </p>      
+        </div>
+      </div>
+    
+      
+      <h2>5.Note</h2>
+
+        <h3>5-1.Pseudo pause</h3>
+        
+          <div class="image-container">
+            <img src="image/5-1note1.png" alt="5-1note1">
+            <div class="text">
+              <div>This plugin will not work if you pause the game with <b>SetGamePaused</b>.</div>
+              
+              <div>You can pseudo-pause it by using <b>SetGlobalTimeDilation</b> (example: 0.0001).</div>
+              <div>I think it would be a good idea to set <span class="color-float">InTimerInteraval</span> to a value that is one-tenth of GlobalTimeDilation (example: 0.00001).</div>
+              <div>In this example, <span class="color-float">InInterpSpeed</span> ​​of 10000.0 seems good.</div>
+            </div>
+          </div>
+          
+          <div class="image-container">
+            <img src="image/5-1note2.png" alt="5-1note2">
+            <div class="text">
+              Note that the value of <b>SetGlobalTimeDilation</b> is clamped to the Min Global Time Dilation found in the World Setting.
+              The above example is for Min Global Time Dilation's default value of 0.0001.
+            </div>
+          </div>
+
+          <div class="image-container">
+            <img src="image/5-1note3.png" alt="5-1note3">
+            <div class="text">
+              Unlike poses, input actions are effective. If you have a problem, please limit it using <b>DisableInput</b> or a Bool variable such as IsLoading.
+              Also, since it doesn't completely stop the game, you may want to limit damage processing with something like <b>CanBeDamaged</b>.
+            </div>
+          </div>
+          
+        <h3>5-2.Be careful how you back up</h3>
+          <div class="image-container">
+            <img src="image/5-2note.png" alt="5-2note">
+            <div class="text">
+              <div>If you set the parent class to LoadingScreenUserWidget, you will not be able to open BP unless this plugin is enabled.</div>
+              <div> <span class="strong">Once you have edited your loading screen, we recommend that you take a backup by duplicating it and changing theparent class to UserWidget</span>.</div>              
+            </div>
+          </div>
+
+        <h3>5-3.Asset Localization</h3>   
+
+          <div class="image-container">
+            <img src="image/5-3note1.png" alt="5-3note1.png">
+            <div class="text">
+              This plugin does not work properly with asset localization.
+              This is an example of a countermeasure.
+              Get the current culture and use the switch node to create different widgets for each language.
+              The variable to be set must be <span class="color-object">“LoadingScreenUserWidget”.</span>
+              *Localization dashboard works fine.
+
+            </div>
+          </div>
+          
+          <div class="image-container">
+            <img src="image/5-3note2.png" alt="5-3note2.png">
+            <div class="text">
+              
+              <div><b>postscript:</b></div>
+              <div>When using this plugin's functions on UMG, I found that there were problems with asset localization other than loading screens.</div>
+              <div>If you have a problem, move it to a custom event such as character or game mode and call it on UMG.</div>
+              
+              <p>
+              <span class="strong">It is important to use this plugin's functions outside of UMG.</span></p>
+</div>
+
+            </div>
+          </div>
+
+
+          
+          <h2>6.Update_2023/11/04_ver1.11_SectorsLoadingEffect</h2>
+          
+        <div class="video-container">
+          <div class="video-wrapper">   
+            <iframe src="https://www.youtube.com/embed/sF1q1pKGBtg?si=ELj8NA_O2W_dji9O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="text">
+                Add M_SectorsLoadingEffect.
+            </div>
+          </div>
+
+            <div class="image-container">
+              <img src="image/6update.png" alt="6update.png">
+              <div class="text">
+                You can change the settings in <b>M_SectorsLoadingEffect_Inst</b> in the plugin's material folder.
+
+            </div>
+          </div>
+
+          
+          <h2>7.Update_2024/02/25_ver1.2</h2>
+
+          <h3>7-1.Circle Progress Bar</h3>
+
+        <div class="video-container">
+          <div class="video-wrapper">        
+              <iframe src="https://www.youtube.com/embed/MXgFBUpDyVY?si=jyWm8dS8G5nmfPWx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+              <div class="text">
+                Now get percentages from BP, Now use Circle Progress Bar. 
+                I have a simple Circle Progress Bar material in my materials folder.
+              </div>
+            </div>
+
+        <div class="video-container">
+          <div class="video-wrapper">           
+              <iframe src="https://www.youtube.com/embed/JznS53JU6rA?si=9nfmb2eb1ZstYV6g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+              <div class="text">
+              Added on 2024/02/26
+              I created a material instance of Circle Progress Bar.
+              </div>
+            </div>
+
+            <div class="image-container">
+              <img src="image/7-1update1.png" alt="7-1update1.png">
+              <div class="text">
+                <p style="margin-top: 0.0em;">This is the loading screen BP.</p>
+                <p>
+                  <div><b>EventOnPercentageUpdate:</b> Event called every time a percentage is updated.</div>
+                  <div><b>GetLoadPercentaeg:</b> Pure function to get load percentage.</div>
+                </p>
+                <span class="strong">*Note that you must use the BeginAsyncLoadWithPercentageUpdate function!</span>
+            </div>
+          </div>
+
+          <h3>7-2.Migrate FadeIn and FadeOut settings to separate functions</h3>
+
+            <div class="image-container">
+              <img src="image/7-2update1.png" alt="7-1update1.png">
+              <div class="text">
+                <p style="margin-top: 0em;">
+                  <span class="color-bool">Enable Fade In / Fade Out:</span> Set to true to enable each effect.
+                  <span class="color-float">In Fade In / Out Timer Interval:</span> Execution interval for each fade step.
+                  <span class="color-float">In Fade In / Out Speed:</span> Speed of opacity change per step. Higher values = faster transitions.
+                </p>
+
+                
+                <span class="strong">
+                Note that the two Timer Intervals are affected by Global Time Dilation.
+                
+                Use the function before starting the load.</span>
+
+              </div>
+            </div>
+          
+
+          
+          <h2>8.Update_2024/03/07_ver1.22_Background Material</h2>
+        <div class="video-container">
+          <div class="video-wrapper"> 
+              <iframe src="https://www.youtube.com/embed/wc6JTE1AP_0?si=jTz-ozALFMHdnZcX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+              <div class="text">
+                Add Background Material.
+                The following sites are recommended for textures used for effects.
+                <div>
+                  <a href="https://mebiusbox.github.io/contents/EffectTextureMaker/" target="_blank" rel="noopener noreferrer">
+                    EffectTextureMaker
+                  </a>               
+                </div> 
+              </div>
+            </div>
+
+            <h2>9.Update_2024/03/20_ver1.24_Supports sublevels</h2>
+
+            <div class="image-container">
+              <img src="image/9update1.png" alt="9update1.png">
+              <div class="text">
+                Use MakeArray and enter the ObjectPath in <span class="color-string">InSublevelObjectPath</span>.
+              </div>
+            </div>
+
+            <div class="image-container">
+              <img src="image/9update2.png" alt="9update2.png">
+              <div class="text">
+                You can check the progress of each load.
+                The total load percentage is divided by the number of packages.
+              </div>
+            </div>
+          
+
+            <h2>10.Update_2024/04/09_ver1.25 EFadeInOutInterpType</h2>
+    
+              <div class="image-container">
+                <img src="image/10update1.png" alt="10update1.png">
+                <div class="text">
+                  Added interp type to FadeIn and FadeOut.
+                </div>
+              </div>
+
+            <h2>11.Update_2025/07/19_ver1.26 ZOrder</h2>
+              <div class="image-container">
+                <img src="image/11-ver1.26-zorder.png" alt="10update1.png">
+                <div class="text">
+                  <div>ZOrder set and get is now available.</div>
+                  <div>Widgets with higher ZOrder values are brought to the front.</div>
+                  <p>
+                    *The test results show that the ZOrder of the slate widget is -10 compared to UMG. When displaying the load screen, we internally add 10 to the ZOrder to make it feel the same as UMG.
+                  </p>                
+                </div>
+              </div>
+              
+  </main> </main>
+
+    <footer>
+        <footer>
+
+    <div>&copy; 2025 roy00227 | <a href="/" style="color: white">トップページに戻る</a></div>
+
+</footer> </footer>
+</body>
+</html>
