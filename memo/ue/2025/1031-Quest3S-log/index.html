@@ -1,8 +1,27 @@
----
-layout: base.html
-title: Unreal Engineメモ-UE5.6-Quest3Sで実行したアプリのログを表示する方法
-permalink: /memo/ue/2025/1031-quest3s-log/index.html
----
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Unreal Engineメモ-UE5.6-Quest3Sで実行したアプリのログを表示する方法</title>
+  <link rel="stylesheet" href="../../../../style.css">
+  <script defer src="../../../../js/load-common.js"></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (typeof loadCommonParts === "function") {
+        loadCommonParts();
+      }
+    });
+  </script>
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/android-chrome-192x192.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div id="header"></div>
 
   <main class="container">
     <center>
@@ -11,7 +30,7 @@ permalink: /memo/ue/2025/1031-quest3s-log/index.html
 
     <section>
       <div class="image-container">
-        <img src="image/image1.png" alt="image">
+        <img src="image1.png" alt="image">
         <div class="text">
           <div>
             接続したQuest3Sが認識できる状態で、PCのコマンドプロンプトやターミナルで「adb logcat -s UE」と入力。
@@ -25,10 +44,17 @@ permalink: /memo/ue/2025/1031-quest3s-log/index.html
 
     <section>
       <div class="image-container">
-        <img src="image/image2.png" alt="image">
+        <img src="image2.png" alt="image">
         <div class="text">
           認識してるか確認するコマンドは「adb devices」。
         </div>
       </div>
-    </section>              
+    </section>
+
+    
+              
   </main>
+
+  <div id="footer"></div>
+</body>
+</html>
