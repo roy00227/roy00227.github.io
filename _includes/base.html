@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title> 
+    <link rel="stylesheet" href="/style.css">
+  
+    <meta name="description" content="roy00227の個人サイトです。Unreal Engineに関する技術メモなどを公開しています。" />
+    
+        <link rel="icon" type="image/x-icon" href="/favicon.ico">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="apple-touch-icon" href="/android-chrome-192x192.png">
+        <link rel="manifest" href="/manifest.json">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="{% if body_class %}{{ body_class }}{% endif %}">
+    <header>
+        {% include "header.html" %} </header>
+
+    <main>
+        {{ content }} </main>
+
+    <footer>
+        {% include "footer.html" %} </footer>
+</body>
+</html>
