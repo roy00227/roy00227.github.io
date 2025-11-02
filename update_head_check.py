@@ -1,29 +1,27 @@
 import tkinter as tk
 from tkinter import messagebox, scrolledtext
 import os
-import re
+# import re # 正規表現の利用を停止
 
 # --- 設定 ---
 EXCLUDE_FILES = ["header.html", "footer.html", "google224cc59b9c585584.html"]
 # --------------------
 
+# ... (GUIの show_results 関数は省略、変更なし) ...
+
 def show_results(root, updated_files, failed_files):
-    """処理結果を新しいウィンドウに表示する"""
+    # (省略：結果表示ウィンドウのコードは以前と同じです)
     result_window = tk.Toplevel(root)
     result_window.title("処理結果")
     
-    # 横方向（列 0, 1）は自動で広がるように設定
     result_window.grid_columnconfigure(0, weight=1)
     result_window.grid_columnconfigure(1, weight=1)
-    
-    # ★ 修正: 行 1（ScrolledTextがある行）のみが縦方向に広がるように設定 ★
     result_window.grid_rowconfigure(1, weight=1)
-    # 行 0 (ラベル) と 行 2 (概要) は weight=0 (固定サイズ) のまま
 
     # --- 成功ファイル枠 ---
     tk.Label(result_window, text=f"✅ 成功ファイル ({len(updated_files)} 件):", font=('Arial', 10, 'bold')).grid(row=0, column=0, padx=10, pady=5, sticky="w")
     success_text = scrolledtext.ScrolledText(result_window, wrap="word", width=40, height=15)
-    success_text.grid(row=1, column=0, padx=10, pady=5, sticky="nsew") # sticky="nsew" で全方向に拡大
+    success_text.grid(row=1, column=0, padx=10, pady=5, sticky="nsew") 
     
     for f in updated_files:
         success_text.insert(tk.END, f"{f}\n")
@@ -32,7 +30,7 @@ def show_results(root, updated_files, failed_files):
     # --- 失敗ファイル枠 ---
     tk.Label(result_window, text=f"⚠️ 失敗ファイル (パターン不一致) ({len(failed_files)} 件):", font=('Arial', 10, 'bold')).grid(row=0, column=1, padx=10, pady=5, sticky="w")
     failed_text = scrolledtext.ScrolledText(result_window, wrap="word", width=40, height=15)
-    failed_text.grid(row=1, column=1, padx=10, pady=5, sticky="nsew") # sticky="nsew" で全方向に拡大
+    failed_text.grid(row=1, column=1, padx=10, pady=5, sticky="nsew") 
     
     for f in failed_files:
         failed_text.insert(tk.END, f"{f}\n")
@@ -43,24 +41,20 @@ def show_results(root, updated_files, failed_files):
 
 
 def replace_in_files():
-    """ファイルを検索・置換するメインロジック"""
-    search_pattern = search_text.get("1.0", tk.END).strip()
-    replace_text = replace_text_area.get("1.0", tk.END).strip()
+    """ファイルを検索・置換するメインロジック（プレーンテキスト置換）"""
+    # ユーザー入力を取得し、Pythonのreplaceメソッドで処理
+    search_text_input = search_text.get("1.0", tk.END).strip()
+    replace_text_input = replace_text_area.get("1.0", tk.END).strip()
     target_dir = os.path.dirname(os.path.abspath(__file__)) 
 
-    if not search_pattern:
+    if not search_text_input:
         messagebox.showerror("エラー", "検索文字列を入力してください。")
         return
 
     updated_files = []
     failed_files = []
-
-    try:
-        compiled_pattern = re.compile(search_pattern, re.DOTALL | re.IGNORECASE)
-    except re.error as e:
-        messagebox.showerror("エラー", f"正規表現の形式が正しくありません: {e}")
-        return
-
+    
+    # ディレクトリ内のすべてのファイルとフォルダを走査
     for root_dir, _, files in os.walk(target_dir):
         for filename in files:
             if not filename.endswith(".html"):
@@ -78,9 +72,12 @@ def replace_in_files():
                 failed_files.append(filepath + " (読み込みエラー)")
                 continue
             
-            new_content, num_replacements = compiled_pattern.subn(replace_text, content)
+            # ★ 修正: str.replace() でプレーンテキスト置換を実行 ★
+            new_content = content.replace(search_text_input, replace_text_input)
             
-            if num_replacements > 0:
+            # 置換されたかどうかの判定 (文字列の長さでチェック)
+            if new_content != content:
+                # 変更が成功した場合、ファイルに書き込む
                 try:
                     with open(filepath, 'w', encoding='utf-8') as f:
                         f.write(new_content)
@@ -88,6 +85,7 @@ def replace_in_files():
                 except Exception:
                      failed_files.append(filepath + " (書き込みエラー)")
             else:
+                # パターンに一致しない場合、失敗（要確認）と見なす
                 failed_files.append(filepath)
     
     show_results(root, updated_files, failed_files)
@@ -95,30 +93,28 @@ def replace_in_files():
 
 # --- GUIのセットアップ ---
 root = tk.Tk()
-root.title("HTML一括置換ツール")
+root.title("HTML一括置換ツール (プレーンモード)")
 
-# ★ 修正: ウィンドウの列と行の設定 (縦横リサイズ対応) ★
-root.grid_columnconfigure(0, weight=1) # 横方向 (Column 0) の拡大を許可
-# 以下の行を追加: 検索文字列エリア (Row 1) と 置換文字列エリア (Row 3) の縦方向の拡大を許可
+# ウィンドウの列/行設定 (リサイズ対応)
+root.grid_columnconfigure(0, weight=1)
 root.grid_rowconfigure(1, weight=1) 
 root.grid_rowconfigure(3, weight=1) 
 
 # 検索文字列のラベルと入力欄
-tk.Label(root, text="検索文字列 (正規表現使用可能。例: (</head>))", anchor="w").grid(row=0, column=0, padx=10, pady=(10, 0), sticky="w")
-# sticky="ew" から "nsew" に変更し、四方に拡大するように指定
+tk.Label(root, text="検索文字列 (インデントや改行も含め、完全に一致させる必要があります)", anchor="w").grid(row=0, column=0, padx=10, pady=(10, 0), sticky="w")
 search_text = tk.Text(root, height=5, width=80)
-search_text.grid(row=1, column=0, padx=10, pady=5, sticky="nsew") 
+search_text.grid(row=1, column=0, padx=10, pady=5, sticky="nsew")
 
 # 置換文字列のラベルと入力欄
-tk.Label(root, text="置換文字列 (例: 共通部分のHTML\n\\1で元の</head>タグを再挿入)", anchor="w").grid(row=2, column=0, padx=10, pady=(10, 0), sticky="w")
-# sticky="ew" から "nsew" に変更し、四方に拡大するように指定
+tk.Label(root, text="置換文字列 (新しいHTMLコード全体)", anchor="w").grid(row=2, column=0, padx=10, pady=(10, 0), sticky="w")
 replace_text_area = tk.Text(root, height=10, width=80)
-replace_text_area.grid(row=3, column=0, padx=10, pady=5, sticky="nsew") 
+replace_text_area.grid(row=3, column=0, padx=10, pady=5, sticky="nsew")
 
 # 注意事項
-tk.Label(root, text=f"除外ファイル: {', '.join(EXCLUDE_FILES)}", fg="blue").grid(row=4, column=0, padx=10, pady=(5, 0), sticky="w")
+tk.Label(root, text=f"⚠️ このツールは、インデント・改行まで完全に一致するプレーン置換です。", fg="red").grid(row=4, column=0, padx=10, pady=(5, 0), sticky="w")
+tk.Label(root, text=f"除外ファイル: {', '.join(EXCLUDE_FILES)}", fg="blue").grid(row=5, column=0, padx=10, pady=(5, 0), sticky="w")
 
-# 実行ボタン (Row 5は固定サイズでOK)
-tk.Button(root, text="実行 (全HTMLファイルを置換)", command=replace_in_files, bg="red", fg="white").grid(row=5, column=0, padx=10, pady=20)
+# 実行ボタン
+tk.Button(root, text="実行 (全HTMLファイルを置換)", command=replace_in_files, bg="red", fg="white").grid(row=6, column=0, padx=10, pady=20)
 
 root.mainloop()
