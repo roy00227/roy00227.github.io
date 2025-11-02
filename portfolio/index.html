@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>roy00227 - ポートフォリオ</title>
+
+  <!-- 全html共通部分 -->
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="/js/load-common.js"></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (typeof loadCommonParts === "function") {
+        loadCommonParts();
+      }
+    });
+  </script>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/android-chrome-192x192.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+  <div id="header"></div>
+
+  <main class="container">
+    
+      <h1>ポートフォリオ</h1>
+
+    
+    <!-- 目次 -->
+    <nav id="toc">
+      <h2>目次</h2>
+      <ul id="toc-list"></ul>
+    </nav>
+    <!-- 目次の項目を自動で追加するスクリプト -->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const tocList = document.getElementById("toc-list");
+      const headings = document.querySelectorAll("h2, h3");
+      headings.forEach((heading, index) => {
+        // 目次セクション内の見出しは除外
+        if (heading.closest("#toc")) return;
+
+        if (!heading.id) {
+          heading.id = `heading-${index}`;
+        }
+        const li = document.createElement("li");
+        li.style.marginLeft = heading.tagName === "H3" ? "20px" : "0";
+        li.innerHTML = `<a href="#${heading.id}">${heading.textContent}</a>`;
+        tocList.appendChild(li);
+      });
+    });
+    </script>
+
+    
+    <h2>自己紹介</h2>    
+      <div class="image-container-small">
+        <img src="image/logo.png" alt="Activate the plugin1">
+        <div class="text">
+            <div>UnrealEngineでゲームやプラグインの開発と販売をしています。</div>
+            <div>またWebサービスの構築・運用もしています。</div>
+            <div>Unityも多少使えます。</div>
+
+            <div style="margin-top: 1em;">
+                <a href="http://tiny.cc/roy00227vitae" target="_blank" rel="noopener noreferrer">
+                    職務経歴書はこちら
+                </a>
+            </div>
+        </div>
+      </div>
+
+      
+      <h2>WispScribe(Webサービス)</h2>
+        <div class="image-container-small">
+              <img src="../image\product\WispScribe.png" alt="WispScribe">
+          <div class="text">
+              <div>
+                  Python (Flask)を用いて構築し、2025年7月に公開した文字起こしのWebサービスです。
+              </div>
+              <p>
+                <div>
+                  <a href="https://wispscribe.com/" target="_blank" rel="noopener noreferrer">
+                    サイト                  
+                  </a>
+                </div>
+              </p>
+              <div>
+                AIを活用して、音声・動画ファイルのアップロードからWhisperを使用しての文字起こし、Stripeでの課金処理、結果表示まで一連の流れを実装しました。Renderでデプロイ・運用しており、フロントエンドとバックエンドの連携も担当しています。
+              </div>
+            </div>
+          </div>
+      </section>
+    
+    <h2>Loading Screen With Load Percentage(UEプラグイン)</h2>  
+      <div class="image-container-small">
+        <img src="../image/product/loading-screen-with-load-percentage/main.png" alt="Loading Screen With Load Percentage">
+        <div class="text">
+            <div>
+                2023年10月にマーケットプレイスで発売したUE5のロード画面のプラグインです。
+            </div>
+            <p>
+                <div>
+                    <a href="https://www.unrealengine.com/marketplace/ja/product/loading-screen-with-load-percentage" target="_blank" rel="noopener noreferrer">
+                        販売ページ
+                    </a> 
+                </div>
+                <div>
+                    <a href="https://roy00227.github.io/document/loading-screen-with-load-percentage/index.html" target="_blank" rel="noopener noreferrer">
+                        ドキュメント
+                    </a> 
+                </div>
+            </p>
+            <div>
+                このプラグインは基本的に、UMGをスレートウィジェットに変換し、ロードパーセントを取得して表示するためのものです。
+            </div>
+            <div>
+                アップデートでフェードインとフェードアウトに対応し、ローディングサインマテリアルやバックグラウンドマテリアルを追加しました。
+            </div>
+            <div>
+                またロードパーセントが変更されるごとにBPのイベントが発火するため、マテリアルを使ったサークルプログレスバーにも対応しています。
+            </div>
+            
+        </div>
+      </div>
+
+    <h2>Wizard of Hunting Life(UE製ゲーム)</h2>   
+      <div class="image-container-small">
+        <img src="../image/product/wizard-of-hunting-life/main.png" alt="Wizard of Hunting Life">
+        <div class="text">
+            <div>
+                UE4・5で作り、2022年6月にSteamで発売したゲームです。
+            </div>
+            <p>
+                <div>
+                    <a href="https://store.steampowered.com/app/1921040/Wizard_of_Hunting_Life/" target="_blank" rel="noopener noreferrer">
+                        販売ページ
+                    </a> 
+                </div>
+            </p>
+            <div>Blueprintを使い、戦闘システム、装備システム、レベルアップシステム、クエストシステムなどを実装しました。</div>
+        </div>
+ 
+      
+
+    
+  </main>
+
+  <div id="footer"></div>
+</body>
+</html>

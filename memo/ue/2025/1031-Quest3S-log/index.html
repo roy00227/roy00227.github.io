@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Unreal Engineメモ-UE5.6-Quest3Sで実行したアプリのログを表示する方法</title>
+
+  <!-- 全html共通部分 -->
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="/js/load-common.js"></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (typeof loadCommonParts === "function") {
+        loadCommonParts();
+      }
+    });
+  </script>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/android-chrome-192x192.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+</head>
+<body>
+  <div id="header"></div>
+
+  <main class="container">
+    <center>
+      <h1>2025/10/31-UE5.6-Quest3Sで実行したアプリのログを表示する方法</h1>
+    </center>
+
+    <section>
+      <div class="image-container">
+        <img src="image1.png" alt="image">
+        <div class="text">
+          <div>
+            接続したQuest3Sが認識できる状態で、PCのコマンドプロンプトやターミナルで「adb logcat -s UE」と入力。
+          </div>
+          <div>
+            ログの取得を止めるにはCtrl+Cを押す。
+          </div>          
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="image-container">
+        <img src="image2.png" alt="image">
+        <div class="text">
+          認識してるか確認するコマンドは「adb devices」。
+        </div>
+      </div>
+    </section>
+
+    
+              
+  </main>
+
+  <div id="footer"></div>
+</body>
+</html>
