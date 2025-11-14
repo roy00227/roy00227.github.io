@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  <!-- 全html共通部分 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="/js/load-common.js"></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (typeof loadCommonParts === "function") {
+        loadCommonParts();
+      }
+    });
+  </script>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/android-chrome-192x192.png">
+  <link rel="manifest" href="/manifest.json">
+  <!-- 全html共通部分ここまで -->
+  
+  <title>Unreal Engineメモ-UE5.7-問題：error LNK2019と出てパッケージ化が失敗</title>
+</head>
+<body>
+  <div id="header"></div>
+
+  <main class="container">
+    <center>
+      <h1>2025/11/14-UE5.7-問題：error LNK2019と出てパッケージ化が失敗</h1>
+    </center>
+
+    <section>
+      <h2>解決</h2>
+      <div class="image-container">
+        <img src="image.png" alt="image">
+        <div class="text">
+          Visal Studio Installerを開き、Visual Studio Community 2022とVisual Studio Build Tools 2022を最新に更新したら解決した。<br>
+          <a href="https://dev.epicgames.com/documentation/ja-jp/unreal-engine/setting-up-visual-studio-development-environment-for-cplusplus-projects-in-unreal-engine" target="_blank" rel="noopener noreferrer">
+            ドキュメントによると17.14が推奨されていた。
+          </a>
+        </div>
+      </div>
+    </section>
+
+    
+    <section>
+      <h2>ログ</h2>
+<pre class="wrapped-code">
+UATHelper: Warning: パッケージ化 (Windows): Warning: Visual Studio 2022 compiler is not a preferred version
+
+[2025.11.14-02.27.41:783][835]UATHelper: Error: パッケージ化 (Windows): Module.LiveCoding.cpp.obj : error LNK2019:        ̊O   V   {   __std_search_1    ֐  "char const * __cdecl std::_Search_vectorized<char const ,char const >(char const * const,char const * const,char const * const,unsigned __int64)" (??$_Search_vectorized@$$CBD$$CBD@std@@YAPEBDQEBD00_K@Z)  ŎQ Ƃ   ܂   
+[2025.11.14-02.27.41:795][835]UATHelper: Error: パッケージ化 (Windows): Module.LiveCoding.cpp.obj : error LNK2019:        ̊O   V   {   __std_search_2    ֐  "wchar_t const * __cdecl std::_Search_vectorized<wchar_t const ,wchar_t const >(wchar_t const * const,wchar_t const * const,wchar_t const * const,unsigned __int64)" (??$_Search_vectorized@$$CB_W$$CB_W@std@@YAPEB_WQEB_W00_K@Z)  ŎQ Ƃ   ܂   
+[2025.11.14-02.27.41:795][835]UATHelper: Error: パッケージ化 (Windows): Module.GeometryAlgorithms.1.cpp.obj : error LNK2019:        ̊O   V   {   __std_mismatch_4    ֐  "void __cdecl std::_Make_heap_unchecked<class std::array<int,2> *,struct std::less<void> >(class std::array<int,2> *,class std::array<int,2> *,struct std::less<void>)" (??$_Make_heap_unchecked@PEAV?$array@H$01@std@@U?$less@X@2@@std@@YAXPEAV?$array@H$01@0@0U?$less@X@0@@Z)  ŎQ Ƃ   ܂   
+[2025.11.14-02.27.41:795][835]UATHelper: Error: パッケージ化 (Windows): Module.GeometryAlgorithms.2.cpp.obj : error LNK2001:  O   V   {   __std_mismatch_4  ͖      ł 
+[2025.11.14-02.27.41:795][835]UATHelper: Error: パッケージ化 (Windows): Module.GeometryAlgorithms.2.cpp.obj : error LNK2019:        ̊O   V   {   __std_minmax_element_d    ֐  "struct std::pair<double *,double *> __cdecl std::_Minmax_element_vectorized<double>(double * const,double * const)" (??$_Minmax_element_vectorized@N@std@@YA?AU?$pair@PEANPEAN@0@QEAN0@Z)  ŎQ Ƃ   ܂   
+[2025.11.14-02.27.41:805][835]UATHelper: Error: パッケージ化 (Windows): Module.TraceAnalysis.cpp.obj : error LNK2019:        ̊O   V   {   __std_find_first_of_trivial_pos_1    ֐  "unsigned __int64 __cdecl std::_Find_first_of_pos_vectorized<char,char>(char const * const,unsigned __int64,char const * const,unsigned __int64)" (??$_Find_first_of_pos_vectorized@DD@std@@YA_KQEBD_K01@Z)  ŎQ Ƃ   ܂   
+[2025.11.14-02.27.41:805][835]UATHelper: Error: パッケージ化 (Windows): reverb_onset_compensator.cc.obj : error LNK2019:        ̊O   V   {   __std_minmax_element_f    ֐  "struct std::pair<float *,float *> __cdecl std::_Minmax_element_vectorized<float>(float * const,float * const)" (??$_Minmax_element_vectorized@M@std@@YA?AU?$pair@PEAMPEAM@0@QEAM0@Z)  ŎQ Ƃ   ܂   
+[2025.11.14-02.27.41:805][835]UATHelper: Error: パッケージ化 (Windows): reverb_node.cc.obj : error LNK2019:        ̊O   V   {   __std_max_element_f    ֐  "float * __cdecl std::_Max_element_vectorized<float>(float * const,float * const)" (??$_Max_element_vectorized@M@std@@YAPEAMQEAM0@Z)  ŎQ Ƃ   ܂   
+</pre>
+              
+  </main>
+
+  <div id="footer"></div>
+</body>
+</html>

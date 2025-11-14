@@ -341,3 +341,13 @@ a:hover {
 .color-object     { color: #01A4EE; } 
 
 
+.wrapped-code {
+    /* 連続する空白と改行は保持しつつ、自動改行を有効にする */
+    white-space: pre-wrap; 
+    
+    /* 単語が長すぎる場合は単語の途中でも改行する */
+    overflow-wrap: break-word; 
+    
+    /* (オプション) 読みやすさのために等幅フォントを維持 */
+    font-family: monospace; 
+}
