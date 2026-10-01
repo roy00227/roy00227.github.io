@@ -17,6 +17,16 @@
   <!-- 全html共通部分ここまで -->
 
   <title>Document-LoadingScreenWithLoadPercentage</title>
+  <meta name="description" content="Documentation for &quot;Loading Screen With Load Percentage&quot;, an Unreal Engine plugin that displays a loading screen with a progress bar and load percentage.">
+  <link rel="canonical" href="https://roy00227.github.io/document/loading-screen-with-load-percentage/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="roy00227-site">
+  <meta property="og:title" content="Document-LoadingScreenWithLoadPercentage">
+  <meta property="og:description" content="Documentation for &quot;Loading Screen With Load Percentage&quot;, an Unreal Engine plugin that displays a loading screen with a progress bar and load percentage.">
+  <meta property="og:url" content="https://roy00227.github.io/document/loading-screen-with-load-percentage/">
+  <meta property="og:image" content="https://roy00227.github.io/image/product/loading-screen-with-load-percentage/main.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@roy002271">
 
 </head>
 <body>
@@ -88,7 +98,7 @@
       </div>
 
       <div class="image-container">
-        <img src="image/1Activate the plugin2.png" alt="Activate the plugin2">
+        <img loading="lazy" src="image/1Activate the plugin2.png" alt="Activate the plugin2">
         <div class="text">
           Check the plugin and restart the editor.
         </div>
@@ -98,42 +108,42 @@
     <h2>2.Configure UMG</h2>
 
       <div class="image-container">
-        <img src="image/2Configure UMG1.png" alt="Configure UMG1">
+        <img loading="lazy" src="image/2Configure UMG1.png" alt="Configure UMG1">
         <div class="text">
           Open the Plugin/LoadingScreenWithLoadPercentage Content folder.
         </div>
       </div>
 
       <div class="image-container">
-        <img src="image/2Configure UMG2.png" alt="Configure UMG2">
+        <img loading="lazy" src="image/2Configure UMG2.png" alt="Configure UMG2">
         <div class="text">
           If you can't see the plugin folder, check Show Plugin Content.
         </div>
       </div>
     
       <div class="image-container">
-        <img src="image/2Configure UMG3.png" alt="Configure UMG3">
+        <img loading="lazy" src="image/2Configure UMG3.png" alt="Configure UMG3">
         <div class="text">
           If you don't have your own UMG loading screen, duplicate BP_LoadingScreenUserWidget and move it to your content folder.
         </div>
       </div>
 
       <div class="image-container">
-        <img src="image/2Configure UMG4.png" alt="Configure UMG4">
+        <img loading="lazy" src="image/2Configure UMG4.png" alt="Configure UMG4">
         <div class="text">
           If you want to use your own UMG loading screen, change ParentClass in ClassSettings to LoadingScreenUserWidget.
         </div>
       </div>
 
       <div class="image-container">
-        <img src="image/2Configure UMG5.png" alt="Configure UMG5">
+        <img loading="lazy" src="image/2Configure UMG5.png" alt="Configure UMG5">
         <div class="text">
           If you want to display loading progress in a bar, it must be a <span class="strong">ProgressBar</span>.
         </div>
       </div>
 
       <div class="image-container">
-        <img src="image/2Configure UMG6.png" alt="Configure UMG6">
+        <img loading="lazy" src="image/2Configure UMG6.png" alt="Configure UMG6">
         <div class="text">
           If you want to display the loading progress as text, it must be <span class="strong">Text</span>.
           
@@ -146,21 +156,21 @@
       <h2>3.Show loading screen</h2>
 
       <div class="image-container">
-        <img src="image/3Show-loading-screen1.png" alt="3Show-loading-screen1">
+        <img loading="lazy" src="image/3Show-loading-screen1.png" alt="3Show-loading-screen1">
         <div class="text">
           Here we will use a loading screen with the default character as an example.
         </div>
       </div>
 
       <div class="image-container">
-        <img src="image/3Show-loading-screen2.png" alt="3Show-loading-screen2">
+        <img loading="lazy" src="image/3Show-loading-screen2.png" alt="3Show-loading-screen2">
         <div class="text">
           First, select the loading screen you want to use with Create Widget.
         </div>
       </div>  
       
       <div class="image-container">
-        <img src="image/3Show-loading-screen3.png" alt="3Show-loading-screen3">
+        <img loading="lazy" src="image/3Show-loading-screen3.png" alt="3Show-loading-screen3">
         <div class="text">
           <div>
             Next, drag the <span class="color-object">Return Value</span> of CreateWidget and use the <span class="strong">SetupLoadingScreen</span> function.
@@ -175,7 +185,7 @@
       </div>
       
       <div class="image-container">
-        <img src="image/3Show-loading-screen4.png" alt="3Show-loading-screen4">
+        <img loading="lazy" src="image/3Show-loading-screen4.png" alt="3Show-loading-screen4">
         <div class="text">
           Next, drag the <span class="color-object">Return Value</span> of CreateWidgetReturn Value of CreateWidget and use the <span class="strong">BeginAsyncLoadWithPercentageUpdate</span> function.
           
@@ -186,7 +196,7 @@
       </div>
 
       <div class="image-container">
-        <img src="image/3Show-loading-screen5.png" alt="3Show-loading-screen5">
+        <img loading="lazy" src="image/3Show-loading-screen5.png" alt="3Show-loading-screen5">
         <div class="text">
           <p style="margin-top: 0em; margin-bottom: 1em;"><span class="color-float">In Timer Interval:</span>
           Time interval to update percentages.
@@ -204,7 +214,7 @@
         </div>
       </div>
       <div class="image-container">
-        <img src="image/3Show-loading-screen6.png" alt="3Show-loading-screen6">
+        <img loading="lazy" src="image/3Show-loading-screen6.png" alt="3Show-loading-screen6">
         <div class="text">
         About In <span class="color-string">Object Path</span>.
         In my case the reference is
@@ -219,7 +229,7 @@
       </div>
       </div>
       <div class="image-container">
-        <img src="image/3Show-loading-screen7.png" alt="3Show-loading-screen7">
+        <img loading="lazy" src="image/3Show-loading-screen7.png" alt="3Show-loading-screen7">
         <div class="text">
           If you play in the viewport or editor window, you can see the percentage movement in the output log.
           Searching for Logtemp is invalid.
@@ -233,7 +243,7 @@
       </div>
       
       <div class="image-container">
-        <img src="image/3Show-loading-screen8.png" alt="3Show-loading-screen8">
+        <img loading="lazy" src="image/3Show-loading-screen8.png" alt="3Show-loading-screen8">
         <div class="text">
           The output log can be displayed from the Window at the top left.
         </div>
@@ -243,14 +253,14 @@
       <h2>4.Supplement</h2>
 
       <div class="image-container">
-        <img src="image/4Supplement1.png" alt="4Supplement1">
+        <img loading="lazy" src="image/4Supplement1.png" alt="4Supplement1">
         <div class="text">
           Loading screen editing must be done before SetupLoadingScreen.
         </div>
       </div>
 
       <div class="image-container">
-        <img src="image/4Supplement2.png" alt="4Supplement2">
+        <img loading="lazy" src="image/4Supplement2.png" alt="4Supplement2">
         <div class="text">
           recommend using <b>custom events</b> and <b>interfaces</b> to make it easier to use.
           If you want to change it, you can just change that part.
@@ -258,7 +268,7 @@
       </div>
 
       <div class="image-container">
-        <img src="image/4Supplement3.png" alt="4Supplement3">
+        <img loading="lazy" src="image/4Supplement3.png" alt="4Supplement3">
         <div class="text">
           In this example, we decided to put the map in a common folder and created an <span class="color-string">ObjectPath</span> using <b>Append</b>.
           
@@ -272,7 +282,7 @@
       </div>
 
       <div class="image-container">
-        <img src="image/4Supplement4.png" alt="4Supplement4">
+        <img loading="lazy" src="image/4Supplement4.png" alt="4Supplement4">
         <div class="text">
           We also recommend creating a Bool variable like <span class="color-bool">IsLoading</span> to limit the display of loading screens.
           If you set the default value to false, it will automatically become false after the level transition, which is convenient.
@@ -281,7 +291,7 @@
       </div>
         
       <div class="image-container">
-        <img src="image/4Supplement5.png" alt="4Supplement5">
+        <img loading="lazy" src="image/4Supplement5.png" alt="4Supplement5">
         <div class="text">
           For the loading screen widget, we recommend using <b>Scale Box</b>, Stretch to <b>Scale to Fit</b>, and Stretch Direction to <b>Both</b>. (If you do not do this, the display may change during Open Level)
           
@@ -289,7 +299,7 @@
       </div>   
 
       <div class="image-container">
-        <img src="image/4Supplement6.png" alt="4Supplement6">
+        <img loading="lazy" src="image/4Supplement6.png" alt="4Supplement6">
         <div class="text">
           <div>Added on 2024/02/25.</div>
             <div>It is easier to adjust if SizeBox is a child of ScaleBox.</div>
@@ -308,7 +318,7 @@
         <h3>5-1.Pseudo pause</h3>
         
           <div class="image-container">
-            <img src="image/5-1note1.png" alt="5-1note1">
+            <img loading="lazy" src="image/5-1note1.png" alt="5-1note1">
             <div class="text">
               <div>This plugin will not work if you pause the game with <b>SetGamePaused</b>.</div>
               
@@ -319,7 +329,7 @@
           </div>
           
           <div class="image-container">
-            <img src="image/5-1note2.png" alt="5-1note2">
+            <img loading="lazy" src="image/5-1note2.png" alt="5-1note2">
             <div class="text">
               Note that the value of <b>SetGlobalTimeDilation</b> is clamped to the Min Global Time Dilation found in the World Setting.
               The above example is for Min Global Time Dilation's default value of 0.0001.
@@ -327,7 +337,7 @@
           </div>
 
           <div class="image-container">
-            <img src="image/5-1note3.png" alt="5-1note3">
+            <img loading="lazy" src="image/5-1note3.png" alt="5-1note3">
             <div class="text">
               Unlike poses, input actions are effective. If you have a problem, please limit it using <b>DisableInput</b> or a Bool variable such as IsLoading.
               Also, since it doesn't completely stop the game, you may want to limit damage processing with something like <b>CanBeDamaged</b>.
@@ -336,7 +346,7 @@
           
         <h3>5-2.Be careful how you back up</h3>
           <div class="image-container">
-            <img src="image/5-2note.png" alt="5-2note">
+            <img loading="lazy" src="image/5-2note.png" alt="5-2note">
             <div class="text">
               <div>If you set the parent class to LoadingScreenUserWidget, you will not be able to open BP unless this plugin is enabled.</div>
               <div> <span class="strong">Once you have edited your loading screen, we recommend that you take a backup by duplicating it and changing theparent class to UserWidget</span>.</div>              
@@ -346,7 +356,7 @@
         <h3>5-3.Asset Localization</h3>   
 
           <div class="image-container">
-            <img src="image/5-3note1.png" alt="5-3note1.png">
+            <img loading="lazy" src="image/5-3note1.png" alt="5-3note1.png">
             <div class="text">
               This plugin does not work properly with asset localization.
               This is an example of a countermeasure.
@@ -358,7 +368,7 @@
           </div>
           
           <div class="image-container">
-            <img src="image/5-3note2.png" alt="5-3note2.png">
+            <img loading="lazy" src="image/5-3note2.png" alt="5-3note2.png">
             <div class="text">
               
               <div><b>postscript:</b></div>
@@ -385,7 +395,7 @@
           </div>
 
             <div class="image-container">
-              <img src="image/6update.png" alt="6update.png">
+              <img loading="lazy" src="image/6update.png" alt="6update.png">
               <div class="text">
                 You can change the settings in <b>M_SectorsLoadingEffect_Inst</b> in the plugin's material folder.
 
@@ -417,7 +427,7 @@
             </div>
 
             <div class="image-container">
-              <img src="image/7-1update1.png" alt="7-1update1.png">
+              <img loading="lazy" src="image/7-1update1.png" alt="7-1update1.png">
               <div class="text">
                 <p style="margin-top: 0.0em;">This is the loading screen BP.</p>
                 <p>
@@ -431,7 +441,7 @@
           <h3>7-2.Migrate FadeIn and FadeOut settings to separate functions</h3>
 
             <div class="image-container">
-              <img src="image/7-2update1.png" alt="7-1update1.png">
+              <img loading="lazy" src="image/7-2update1.png" alt="7-1update1.png">
               <div class="text">
                 <p style="margin-top: 0em;">
                   <span class="color-bool">Enable Fade In / Fade Out:</span> Set to true to enable each effect.
@@ -469,14 +479,14 @@
             <h2>9.Update_2024/03/20_ver1.24_Supports sublevels</h2>
 
             <div class="image-container">
-              <img src="image/9update1.png" alt="9update1.png">
+              <img loading="lazy" src="image/9update1.png" alt="9update1.png">
               <div class="text">
                 Use MakeArray and enter the ObjectPath in <span class="color-string">InSublevelObjectPath</span>.
               </div>
             </div>
 
             <div class="image-container">
-              <img src="image/9update2.png" alt="9update2.png">
+              <img loading="lazy" src="image/9update2.png" alt="9update2.png">
               <div class="text">
                 You can check the progress of each load.
                 The total load percentage is divided by the number of packages.
@@ -487,7 +497,7 @@
             <h2>10.Update_2024/04/09_ver1.25 EFadeInOutInterpType</h2>
     
               <div class="image-container">
-                <img src="image/10update1.png" alt="10update1.png">
+                <img loading="lazy" src="image/10update1.png" alt="10update1.png">
                 <div class="text">
                   Added interp type to FadeIn and FadeOut.
                 </div>
@@ -495,7 +505,7 @@
 
             <h2>11.Update_2025/07/19_ver1.26 ZOrder</h2>
               <div class="image-container">
-                <img src="image/11-ver1.26-zorder.png" alt="11update1.png">
+                <img loading="lazy" src="image/11-ver1.26-zorder.png" alt="11update1.png">
                 <div class="text">
                   <div><span class="color-int">ZOrder</span> set and get is now available.</div>
                   <div>Widgets with higher ZOrder values are brought to the front.</div>
@@ -508,7 +518,7 @@
               
             <h2>11.Update_2026/04/20_ver1.28 "TravelSettings" structure</h2>
               <div class="image-container">
-                <img src="image/12-ver1.28-TravelSettings.png" alt="12update1.png">
+                <img loading="lazy" src="image/12-ver1.28-TravelSettings.png" alt="12update1.png">
                 <div class="text">
                   <div>
                     "TravelSettings" structure for level transitions has been added in UE5.5 and later versions.
@@ -530,7 +540,7 @@
               
             <h2>12.Update_2026/05/27_ver1.29 manually stop the loading screen</h2>
               <div class="image-container">
-                <img src="image/13-ver1.29-manually-stop-the-loading-screen.png" alt="13-ver1.29-manually-stop-the-loading-screen.png">
+                <img loading="lazy" src="image/13-ver1.29-manually-stop-the-loading-screen.png" alt="13-ver1.29-manually-stop-the-loading-screen.png">
                 <div class="text">
                   <div>
                     I've added a feature that allows you to manually stop the loading screen in UE5.5 and later versions.

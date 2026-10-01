@@ -1,2 +1,5 @@
 plugins:
 # - jekyll-sitemap
+
+exclude:
+  - update_head_check.py
