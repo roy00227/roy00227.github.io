@@ -7,7 +7,7 @@
   --sub-text-color: #6b7280;
   --link-color: #005a96;
   --border-color: #dde3ea;
-  --heading-font: 'M PLUS Rounded 1c', "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", Meiryo, sans-serif;
+  --heading-font: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", Meiryo, sans-serif;
 }
 
 /* 全体の背景色（枠の外側） */
@@ -271,6 +271,38 @@ a:hover {
 
 .product-info p {
   margin: 0;
+}
+
+.product-info p + p {
+  margin-top: 0.5em;
+}
+
+/* ポートフォリオのカード内タイトル */
+.product-info h3 {
+  margin: 0 0 0.2em;
+  padding-left: 0;
+  border-left: none;
+  font-size: 1.25em;
+}
+
+/* カード内の「詳細」などの小見出し */
+.product-info * + h4 {
+  margin: 1em 0 0.3em;
+  font-size: 1em;
+  color: var(--main-color-dark);
+}
+
+/* 種類や時期などの補足情報 */
+.product-meta {
+  color: var(--sub-text-color);
+  font-size: 0.9em;
+  margin-bottom: 0.4em !important;
+}
+
+/* 自己紹介のカードは動かさない */
+.profile:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transform: none;
 }
 
 .product-links {

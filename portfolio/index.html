@@ -7,9 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/style.css">
   <script defer src="/js/load-common.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/android-chrome-192x192.png">
@@ -65,133 +62,75 @@
     });
     </script>
     
-    <h2>自己紹介</h2>    
-      <div class="image-container-small">
+    <h2>自己紹介</h2>
+      <div class="product profile">
         <img src="image/logo.png" alt="roy00227 ロゴ">
-        <div class="text">
-          Unreal Engineでのゲームおよびプラグインの開発・販売実績がございます。
-          <br>
-          Webサービスの開発・運用実績もあり、Unityについても調査やAIの活用により対応可能です。
-          <br>
-          <br>
-          ポートフォリオ以外の制作実績やスキルの詳細は、以下の職務経歴書をご参照ください。
-          <div>
-              <a href="https://docs.google.com/spreadsheets/d/1K_XG1z5pMqu9nVD-kU7i7flYy6jpMCi7/" target="_blank" rel="noopener noreferrer">
-                  職務経歴書
-              </a>
-          </div>
+        <div class="product-info">
+          <p>Unreal Engineでのゲームおよびプラグインの開発・販売実績がございます。<br>
+          Webサービスの開発・運用実績もあり、Unityについても調査やAIの活用により対応可能です。</p>
+          <p>ポートフォリオ以外の制作実績やスキルの詳細は、以下の職務経歴書をご参照ください。</p>
+          <ul class="product-links">
+            <li><a href="https://docs.google.com/spreadsheets/d/1K_XG1z5pMqu9nVD-kU7i7flYy6jpMCi7/" target="_blank" rel="noopener noreferrer">職務経歴書</a></li>
+          </ul>
         </div>
       </div>
 
-      
-      
-<h2>LiteGesture（Google Chrome拡張機能）</h2>
-      <div class="image-container-small">
+    <h2>制作実績</h2>
+      <div class="product">
         <img loading="lazy" src="../image/product/litegesture.png" alt="LiteGesture">
-        <div class="text">
-            <div>
-              マウスジェスチャー拡張機能「LiteGesture」の開発（自主制作）
-            </div>
-            開発時期：2026年8月<br>
-            <a href="https://chromewebstore.google.com/detail/litegesture/fmpmjndemhlaneoiolnepiekmlkkegbm" target="_blank" rel="noopener noreferrer">
-              Chrome ウェブストア                  
-            </a><br>
-            <a href="https://github.com/roy00227/LiteGesture" target="_blank" rel="noopener noreferrer">
-                  リポジトリ                  
-                </a>
-            <div>
-              <h3>詳細</h3>
-                右クリック（または左クリック）を押しながらマウスを動かすことで、ブラウザの戻る／進む・タブの複製／切替／復元などを実行できるChrome拡張機能を個人開発。Manifest V3に準拠し、JavaScriptのみで実装。<br>
-                content scriptでマウス・ホイールイベントを検知しジェスチャーを判定するロジックと、service workerでタブ操作を実行する処理を実装。<br>
-                ジェスチャーと実行アクションの割り当てを自由にカスタマイズできる設定画面、および軌跡をリアルタイム表示するオーバーレイUIも実装。日本語・英語のバイリンガルUIにも対応。
-              </div>
-            </div>
-          </div>
-
-
-      <h2>WispScribe(Webサービス)</h2>
-        <div class="image-container-small">
-              <img loading="lazy" src="../image/product/WispScribe.webp" alt="WispScribe">
-          <div class="text">
-              <div>
-                  音声文字起こしWebサービス「WispScribe」の開発と運用（自主制作）
-              </div>
-              運用開始日：2025年7月
-              
-              <div>
-                <a href="https://wispscribe.com/" target="_blank" rel="noopener noreferrer">
-                  サイト                  
-                </a>
-              </div>
-              
-              <div>
-              <h3>詳細</h3>
-                GeminiとChatGPTを活用しながら、Whisper APIとStripeを用いた音声ファイルの文字起こし＋決済機能付きのWebサービスを個人開発。<br>
-                Python (Flask)を用いて構築し、音声・動画ファイルのアップロードから文字起こし、課金処理、結果表示まで一連の流れを実装。フロントエンドとバックエンドの連携も担当。<br>
-                またPageSpeed Insightsでのスコアの改善を実施。<br>
-
-              </div>
-            </div>
-          </div>
-    
-    <h2>Loading Screen With Load Percentage(Unreal Engineプラグイン)</h2>  
-      <div class="image-container-small">
+        <div class="product-info">
+          <h3>LiteGesture</h3>
+          <p class="product-meta">Google Chrome拡張機能 ／ 開発時期：2026年8月</p>
+          <p>マウスジェスチャー拡張機能「LiteGesture」の開発（自主制作）</p>
+          <ul class="product-links">
+            <li><a href="https://chromewebstore.google.com/detail/litegesture/fmpmjndemhlaneoiolnepiekmlkkegbm" target="_blank" rel="noopener noreferrer">Chrome ウェブストア</a></li>
+            <li><a href="https://github.com/roy00227/LiteGesture" target="_blank" rel="noopener noreferrer">リポジトリ</a></li>
+          </ul>
+          <h4>詳細</h4>
+          <p>右クリック（または左クリック）を押しながらマウスを動かすことで、ブラウザの戻る／進む・タブの複製／切替／復元などを実行できるChrome拡張機能を個人開発。Manifest V3に準拠し、JavaScriptのみで実装。<br>content scriptでマウス・ホイールイベントを検知しジェスチャーを判定するロジックと、service workerでタブ操作を実行する処理を実装。<br>ジェスチャーと実行アクションの割り当てを自由にカスタマイズできる設定画面、および軌跡をリアルタイム表示するオーバーレイUIも実装。日本語・英語のバイリンガルUIにも対応。</p>
+        </div>
+      </div>
+      <div class="product">
+        <img loading="lazy" src="../image/product/WispScribe.webp" alt="WispScribe">
+        <div class="product-info">
+          <h3>WispScribe</h3>
+          <p class="product-meta">Webサービス ／ 運用開始日：2025年7月</p>
+          <p>音声文字起こしWebサービス「WispScribe」の開発と運用（自主制作）</p>
+          <ul class="product-links">
+            <li><a href="https://wispscribe.com/" target="_blank" rel="noopener noreferrer">サイト</a></li>
+          </ul>
+          <h4>詳細</h4>
+          <p>GeminiとChatGPTを活用しながら、Whisper APIとStripeを用いた音声ファイルの文字起こし＋決済機能付きのWebサービスを個人開発。<br>Python (Flask)を用いて構築し、音声・動画ファイルのアップロードから文字起こし、課金処理、結果表示まで一連の流れを実装。フロントエンドとバックエンドの連携も担当。<br>またPageSpeed Insightsでのスコアの改善を実施。</p>
+        </div>
+      </div>
+      <div class="product">
         <img loading="lazy" src="../image/product/loading-screen-with-load-percentage/main.webp" alt="Loading Screen With Load Percentage">
-        <div class="text">
-            <div>
-                Unreal Engineプラグイン『Loading Screen With Load Percentage』の開発と販売(自主制作)
-            </div>
-            販売開始日：2023年10月
-            <div>
-                <a href="https://www.fab.com/ja/listings/179be80a-b024-4442-ae08-c0ddf90d3ac3" target="_blank" rel="noopener noreferrer">
-                    販売ページ
-                </a> 
-            </div>
-            <h3>詳細</h3>
-            <div>
-              UMGをスレートウィジェットに変換してロード画面を表示し、プログレスバーとテキストでロードの割合を表示。
-              <br>
-              フェードイン・フェードアウトにも対応。
-              <br>
-              マーケットプレイス（現在はFab）で販売。
-            </div>
-            
-            <div>
-              <a href="https://roy00227.github.io/document/loading-screen-with-load-percentage/index.html" target="_blank" rel="noopener noreferrer">
-                  ドキュメント
-              </a> 
-            </div>
-            
+        <div class="product-info">
+          <h3>Loading Screen With Load Percentage</h3>
+          <p class="product-meta">Unreal Engineプラグイン ／ 販売開始日：2023年10月</p>
+          <p>Unreal Engineプラグイン『Loading Screen With Load Percentage』の開発と販売（自主制作）</p>
+          <ul class="product-links">
+            <li><a href="https://www.fab.com/ja/listings/179be80a-b024-4442-ae08-c0ddf90d3ac3" target="_blank" rel="noopener noreferrer">販売ページ</a></li>
+            <li><a href="../document/loading-screen-with-load-percentage/">ドキュメント</a></li>
+          </ul>
+          <h4>詳細</h4>
+          <p>UMGをスレートウィジェットに変換してロード画面を表示し、プログレスバーとテキストでロードの割合を表示。<br>フェードイン・フェードアウトにも対応。<br>マーケットプレイス（現在はFab）で販売。</p>
         </div>
       </div>
-
-    <h2>Wizard of Hunting Life(Unreal Engine4・5製ゲーム)</h2>   
-      <div class="image-container-small">
+      <div class="product">
         <img loading="lazy" src="../image/product/wizard-of-hunting-life/main.webp" alt="Wizard of Hunting Life">
-        <div class="text">
-            <div>
-                Unreal Engine4・5を使いPCゲーム「Wizard of Hunting Life」開発・リリース（自主制作）
-            </div>
-              販売開始日：2022年6月
-            <div>
-                <a href="https://store.steampowered.com/app/1921040/Wizard_of_Hunting_Life/" target="_blank" rel="noopener noreferrer">
-                    販売ページ
-                </a> 
-            </div>
-            
-            <h3>詳細</h3>
-            <div>
-              3Dモデルやエフェクトはマーケットプレイスで購入し、システムはYoutubeのチュートリアル動画などを見ながら、ブループリントを使い制作。
-              <br>
-              戦闘、足音・エフェクト、敵AI、インベントリ、インタラクト、ダイアログ、ショップ、クエスト、オプションシステムなどの実装。
-              <br>
-              Steamで販売。
-            </div>
+        <div class="product-info">
+          <h3>Wizard of Hunting Life</h3>
+          <p class="product-meta">Unreal Engine4・5製ゲーム ／ 販売開始日：2022年6月</p>
+          <p>Unreal Engine4・5を使いPCゲーム「Wizard of Hunting Life」開発・リリース（自主制作）</p>
+          <ul class="product-links">
+            <li><a href="https://store.steampowered.com/app/1921040/Wizard_of_Hunting_Life/" target="_blank" rel="noopener noreferrer">販売ページ</a></li>
+          </ul>
+          <h4>詳細</h4>
+          <p>3Dモデルやエフェクトはマーケットプレイスで購入し、システムはYoutubeのチュートリアル動画などを見ながら、ブループリントを使い制作。<br>戦闘、足音・エフェクト、敵AI、インベントリ、インタラクト、ダイアログ、ショップ、クエスト、オプションシステムなどの実装。<br>Steamで販売。</p>
         </div>
       </div>
-      
 
-    
   </main>
 
   <div id="footer"></div>
