@@ -260,7 +260,7 @@ a:hover {
 /* --- スマホ縦向き (480px以下) --- */
 @media (max-width: 480px) {
   .image-container img {  
-    max-width: 480px;    /* 横幅の最大値を制限 */
+    max-width: 100%;    /* 画面幅からはみ出さないように制限 */
     height: auto;
     flex-shrink: 0;
     display: block;
